@@ -24,33 +24,47 @@ void dv_free(DynamicVector *dv)
     free(dv->data);
 }
 
-void dv_resize(DynamicVector *dv)
+int dv_resize(DynamicVector *dv)
 {
     dv->capacity *= 2;
-    uint8_t *old_data = dv->data;
-    dv->data = malloc(sizeof(uint8_t) * dv->capacity);
-    for(int i = 0; i < dv->size; i++)
+    uint8_t *temp_data = realloc(dv->data, sizeof(uint8_t) * dv->capacity);
+    if(temp_data)
+        dv->data = temp_data;
+    else
     {
-        dv->data[i] = old_data[i];
+        printf("Memory Reallocation Failed\n");
+        free(dv->data);
+        dv->data = NULL;
+        dv->size = 0;
+        dv->capacity = 0;
+        return -1;
     }
-    free(old_data);
+    return 0;
 }
 
-void dv_push_back(DynamicVector *dv, uint8_t data_val)
+int dv_push_back(DynamicVector *dv, uint8_t data_val)
 {
     if(dv->size == dv->capacity)
     {
         printf("Vector Full, Resizing\n");
-        dv_resize(dv);
+        if(dv_resize(dv) == -1)
+        {
+            printf("Failed to resize vector\n");
+            return -1;
+        }
     }
     printf("Adding %d to index:%d\n", data_val, dv->size);
     dv->data[dv->size++] = data_val;
+    return 0;
 }
 
 uint8_t dv_get(DynamicVector *dv, int index)
 {
     if(index >= dv->size)
-        return 0xFF;
+    {
+        printf("Index out of bounds\n");
+        return -1;
+    }
     else
     {
         printf("Fetching %d from index:%d\n", dv->data[index], index);

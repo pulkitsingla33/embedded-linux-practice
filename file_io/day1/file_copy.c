@@ -9,27 +9,36 @@ int main(int argc, char *argv[])
 
     if(argc != 3)
     {
-        printf("Usage: %s <source_file> <destination_file>\n", argv[0]);
+        perror("Mention: <executable_name> <source_file> <destination_file>\n");
         return -1;
     }
 
     int read_fd = open(argv[1], O_RDONLY);
     if(read_fd == -1)
     {
-        printf("Error while opening read file\n");
+        perror("Error opening read file\n");
         return -1;
     }
 
     int write_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if(write_fd == -1)
     {
-        printf("Error while opening write file\n");
+        perror("Error opening write file\n");
+        close(read_fd);
         return -1;
     }
 
-    bytes_read = read(read_fd, buffer, sizeof(buffer) - 1);
-
-    bytes_written = write(write_fd, buffer, bytes_read);    
+    while((bytes_read = read(read_fd, buffer, sizeof(buffer) - 1)) > 0)
+    {
+        bytes_written = write(write_fd, buffer, bytes_read);
+        if(bytes_written != bytes_read)
+        {
+            close(write_fd);
+            close(read_fd);
+            perror("Error while writing to file\n");
+            return -1;
+        }
+    }
 
     close(read_fd);
     close(write_fd);

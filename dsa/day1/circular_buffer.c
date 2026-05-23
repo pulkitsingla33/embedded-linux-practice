@@ -10,28 +10,47 @@ typedef struct{
     int max_size;
 } CircularBuffer;
 
-void init(CircularBuffer *cb, int data)
+int init(CircularBuffer *cb, int data)
 {
-    cb->buffer = malloc(sizeof(int) * BUFFER_SIZE);
+    if(!cb)
+        return -1;
+
     cb->max_size = BUFFER_SIZE;
+    cb->buffer = malloc(sizeof(int) * cb->max_size);
+    if(!cb->buffer)
+    {
+        printf("Memory Allocation Failed\n");
+        return -1;
+    }
     
     cb->head = 0;
     cb->tail = 1;
     cb->buffer[0] = data;
+
+    return 0;
 }
 
 int is_full(CircularBuffer *cb)
 {
-    return ((cb->tail + 1) % BUFFER_SIZE == cb->head);
+    if(!cb)
+        return -1;
+
+    return ((cb->tail + 1) % cb->max_size == cb->head);
 }
 
 int is_empty(CircularBuffer *cb)
 {
+    if(!cb)
+        return -1;
+
     return (cb->head == cb->tail);
 }
 
 int push(CircularBuffer *cb, int data)
 {
+    if(!cb)
+        return -1;
+
     if(is_full(cb))
     {
         printf("Buffer Full\n");
@@ -40,13 +59,16 @@ int push(CircularBuffer *cb, int data)
 
     printf("Push Data %d to index %d\n", data, cb->tail);
     cb->buffer[cb->tail] = data;
-    cb->tail = (cb->tail + 1) % BUFFER_SIZE;
+    cb->tail = (cb->tail + 1) % cb->max_size;
 
     return 0;
 }
 
 int pop(CircularBuffer *cb)
 {
+    if(!cb)
+        return -1;
+
     if(is_empty(cb))
     {
         printf("Buffer Empty\n");
@@ -55,12 +77,15 @@ int pop(CircularBuffer *cb)
 
     int data = cb->buffer[cb->head];
     printf("Pop Data %d from index %d\n", data, cb->head);
-    cb->head = (cb->head + 1) % BUFFER_SIZE;
+    cb->head = (cb->head + 1) % cb->max_size;
     return data;
 }
 
 void print(CircularBuffer *cb)
 {
+    if(!cb)
+        return;
+
     int index = cb->head;
     if(is_empty(cb))
     {
@@ -70,7 +95,7 @@ void print(CircularBuffer *cb)
     while(index != cb->tail)
     {
         printf("Element at index %d is %d\n", index, cb->buffer[index]);
-        index = (index + 1) % BUFFER_SIZE;
+        index = (index + 1) % cb->max_size;
     }
 }
 
@@ -79,7 +104,11 @@ int main()
 {
     CircularBuffer cb;
 
-    init(&cb, 0);
+    if(init(&cb, 0) == -1)
+    {
+        printf("Initialization Failed\n");
+        return -1;
+    }
 
     for(int i = 0; i< 10; i++)
     {
