@@ -16,8 +16,17 @@ int main()
             break; // Exit on EOF
         }
 
-        // Remove trailing newline character
         command[strcspn(command, "\n")] = 0;
+
+        char *commands_with_flags[100];
+        char *token = strtok(command, " ");
+        int i = 0;
+        while(token != NULL)
+        {         
+            commands_with_flags[i++] = token;
+            token = strtok(NULL, " ");
+        }
+        commands_with_flags[i] = NULL; // Null-terminate the array        
 
         if(strcmp(command, "exit") == 0)
         {
@@ -33,7 +42,7 @@ int main()
         else if(pid == 0)
         {
             //Child process
-            execvp(command, (char *[]) {command, NULL});
+            execvp(commands_with_flags[0], commands_with_flags);
             perror("execvp");
             exit(EXIT_FAILURE);
         }
