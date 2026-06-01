@@ -12,15 +12,14 @@ int main()
     char command[1024];
     char *history[HISTORY_SIZE] = {NULL};
     int history_index = 0;
-
-    const char *base_dir = "/home/user";
+    
     char current_dir[1024];
-    strcpy(current_dir, base_dir);
 
     while(1)
     {
-
         while(waitpid(-1,NULL,WNOHANG) > 0);
+
+        getcwd(current_dir, sizeof(current_dir));
 
         int background = 0;
         printf("mini-shell> ");
@@ -100,8 +99,12 @@ int main()
         }
         else if(strcmp(commands_with_flags[0], "cd") == 0)
         {
-            if(strcmp(commands_with_flags[1], "..") == 0)
-                strcpy(current_dir, "/home");
+            if(commands_with_flags[1] && (strcmp(commands_with_flags[1], "..") == 0))
+                if(chdir("..") < 0)
+                {
+                    perror("Failed to change directory");
+                    exit(EXIT_FAILURE);
+                }
 
             continue;
         }
