@@ -342,11 +342,13 @@ Preferred problem categories:
 - two pointers
 
 Current Progress:
-- Hashing patterns are becoming comfortable.
+- Hashing-based DSA problems are becoming comfortable.
+- Binary search variants should receive additional repetition.
+- STL usage is no longer a major bottleneck.
 - Basic XOR-based bit manipulation is becoming intuitive.
-- STL familiarity is improving steadily.
 - Two-pointer patterns are beginning to emerge but still require repetition.
 - Edge-case handling and defensive programming should be emphasized in future exercises.
+
 Bit Manipulation Progress:
 
 Foundational bit-manipulation patterns are becoming comfortable:
@@ -1044,6 +1046,29 @@ By placements, aim to become someone who can:
 - Intersection Of Two Arrays — Hash Set Pattern
 
 ---
+## Day 13
+
+### C / Systems
+- mini_shell_v8.c — Conditional Execution (&&) / Exit Status Handling
+- mini_wcl.c — Low-Level File Processing / Line Counting
+- process_tree.c — Process Metadata Inspection via /proc
+
+### Linux
+- Process Exit Status (WIFEXITED / WEXITSTATUS)
+- /proc/<pid>/status Exploration
+- Low-Level File IO (open/read/close)
+- Linux Process Introspection
+
+### Bit Manipulation
+- Count Bits For Every Number — Bit DP Pattern
+- Single Number II — Bitwise State Machine Logic
+
+### DSA
+- Valid Sudoku — Hashing + Matrix Validation
+- First and Last Occurrence — Binary Search Variant
+
+---
+
 
 # FORMAT TO FOLLOW
 

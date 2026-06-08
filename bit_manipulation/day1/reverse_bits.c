@@ -19,3 +19,4 @@ int main()
     printf("Reversed value is: %x\n",reverse_bits(my_num));
     
     return 0;
+}
