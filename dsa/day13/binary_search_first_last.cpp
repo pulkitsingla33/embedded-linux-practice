@@ -13,7 +13,7 @@ vector<int> searchRange(vector<int>& nums, int target)
     {
         return {0, 0};
     }
-    while(last > first)
+    while(last >= first)
     {
         mid = (first + last)/2;
         if(nums[mid] == target)
