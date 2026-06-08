@@ -343,9 +343,9 @@ Preferred problem categories:
 
 Current Progress:
 - Hashing-based DSA problems are becoming comfortable.
-- Binary search variants should receive additional repetition.
+- Binary search intuition is improving and should continue receiving regular practice.
+- XOR partitioning and bitmask enumeration patterns are becoming comfortable.
 - STL usage is no longer a major bottleneck.
-- Basic XOR-based bit manipulation is becoming intuitive.
 - Two-pointer patterns are beginning to emerge but still require repetition.
 - Edge-case handling and defensive programming should be emphasized in future exercises.
 
@@ -1066,6 +1066,29 @@ By placements, aim to become someone who can:
 ### DSA
 - Valid Sudoku — Hashing + Matrix Validation
 - First and Last Occurrence — Binary Search Variant
+
+---
+
+## Day 14
+
+### C / Systems
+- mini_shell_v9.c — Logical OR (||) / Shell Command Chaining
+- mini_cat.c — Low-Level File Display Utility
+- fd_leak_demo.c — File Descriptor Lifecycle / Resource Leak Demonstration
+
+### Linux
+- Logical Command Chaining
+- Resource Leak Detection
+- /proc/self/fd Monitoring
+- Low-Level File Reading and Writing
+
+### Bit Manipulation
+- Generate All Subsets Using Bitmasks — Bitmask Enumeration
+- Find Two Missing Numbers — XOR Partitioning Logic
+
+### DSA
+- Queue Using STL — STL Queue Familiarity
+- Find Peak Element — Binary Search Pattern
 
 ---
 
