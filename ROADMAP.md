@@ -344,10 +344,11 @@ Preferred problem categories:
 Current Progress:
 - Hashing-based DSA problems are becoming comfortable.
 - Binary search intuition is improving and should continue receiving regular practice.
-- XOR partitioning and bitmask enumeration patterns are becoming comfortable.
 - STL usage is no longer a major bottleneck.
-- Two-pointer patterns are beginning to emerge but still require repetition.
 - Edge-case handling and defensive programming should be emphasized in future exercises.
+- Shell project has evolved into a strong placement-project candidate.
+- Two-pointer patterns are becoming increasingly comfortable.
+- Bit manipulation should now focus on logic and state-encoding problems rather than basic XOR exercises.
 
 Bit Manipulation Progress:
 
@@ -377,32 +378,27 @@ Progress to harder graph/heap/advanced problems only after these patterns feel n
 
 ## Goals
 - Become comfortable with real Linux APIs
-- Build networking intuition
 - Improve systems design thinking
 
 ---
 
 # Topics
-
-Study + Implement:
-- sockets
-- TCP/UDP
-- blocking vs nonblocking IO
-- select/poll
-- signal handling
-- timers
-- file descriptors
+- Advanced Linux Systems Programming
+- IPC (Pipes, Shared Memory, Message Queues)
+- File Descriptor Management
+- Process and Thread Debugging
+- Resource Lifecycle Management
+- Continued DSA Foundation Building
+- Advanced Bit Manipulation Logic
 
 ---
 
 # Implementations
 
 Build:
-- TCP client-server
 - multi-client chat server
 - async logger
 - terminal chat application
-- socket-based file transfer
 
 ---
 
@@ -411,7 +407,6 @@ Build:
 Learn:
 - strace
 - lsof
-- netstat/ss
 - process inspection
 
 ---
@@ -1089,6 +1084,28 @@ By placements, aim to become someone who can:
 ### DSA
 - Queue Using STL — STL Queue Familiarity
 - Find Peak Element — Binary Search Pattern
+
+---
+
+## Day 15
+
+### C / Systems
+- mini_shell_v10.c — Sequential Command Execution (;)
+- mini_tee.c — Stream Duplication Utility
+
+### Linux
+- Sequential Command Parsing
+- STDIN / STDOUT Stream Handling
+- File Descriptor Duplication Concepts
+- Utility-Style Program Development
+
+### Bit Manipulation
+- Binary Representation Palindrome Check
+- Remainder Without Using *, /, %
+
+### DSA
+- Move Zeroes — Two Pointer Pattern
+- Longest Common Prefix — String Comparison Pattern
 
 ---
 
