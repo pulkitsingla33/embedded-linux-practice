@@ -342,11 +342,12 @@ Preferred problem categories:
 - two pointers
 
 Current Progress:
+- Shared-memory IPC has been introduced and should receive additional practice.
+- Binary-search variants are becoming more comfortable but still require repetition.
+- Shell project now covers most core interview-worthy shell features.
 - Hashing-based DSA problems are becoming comfortable.
-- Binary search intuition is improving and should continue receiving regular practice.
 - STL usage is no longer a major bottleneck.
 - Edge-case handling and defensive programming should be emphasized in future exercises.
-- Shell project has evolved into a strong placement-project candidate.
 - Two-pointer patterns are becoming increasingly comfortable.
 - Bit manipulation should now focus on logic and state-encoding problems rather than basic XOR exercises.
 
@@ -1106,6 +1107,28 @@ By placements, aim to become someone who can:
 ### DSA
 - Move Zeroes — Two Pointer Pattern
 - Longest Common Prefix — String Comparison Pattern
+
+---
+
+## Day 16
+
+### C / Systems
+- mini_shell_v11.c — Quoted String Parsing / Shell Tokenization
+- shared_counter.c — Shared Memory IPC / Parent-Child Communication
+
+### Linux
+- Shared Memory APIs (shmget/shmat/shmdt/shmctl)
+- Parent-Child Shared State
+- Shell Parsing Strategies
+- Command Tokenization
+
+### Bit Manipulation
+- Binary Gap — Bit Scanning / State Tracking
+- Modulo Bit Counting Logic (Single Number Variant)
+
+### DSA
+- Valid Anagram (Frequency Array Version) — Character Counting
+- Search Insert Position — Binary Search Variant
 
 ---
 
