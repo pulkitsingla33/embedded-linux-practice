@@ -343,13 +343,15 @@ Preferred problem categories:
 
 Current Progress:
 - Shared-memory IPC has been introduced and should receive additional practice.
-- Binary-search variants are becoming more comfortable but still require repetition.
 - Shell project now covers most core interview-worthy shell features.
 - Hashing-based DSA problems are becoming comfortable.
 - STL usage is no longer a major bottleneck.
 - Edge-case handling and defensive programming should be emphasized in future exercises.
 - Two-pointer patterns are becoming increasingly comfortable.
 - Bit manipulation should now focus on logic and state-encoding problems rather than basic XOR exercises.
+- POSIX message queues have been introduced and should receive one or two reinforcement exercises.
+- Binary-search based interview problems are becoming increasingly comfortable.
+- New Linux APIs generally require one guided exposure before becoming comfortable.
 
 Bit Manipulation Progress:
 
@@ -1129,6 +1131,27 @@ By placements, aim to become someone who can:
 ### DSA
 - Valid Anagram (Frequency Array Version) — Character Counting
 - Search Insert Position — Binary Search Variant
+
+---
+
+## Day 17
+
+### C / Systems
+- mini_shell_v12.c — Append Redirection (>>)
+- message_queue_demo.c — POSIX Message Queues / IPC
+
+### Linux
+- POSIX Message Queue APIs
+- mq_open / mq_send / mq_receive
+- Append File Semantics (O_APPEND)
+- IPC Mechanism Comparison
+
+### Bit Manipulation
+- Parity Calculation Using XOR Folding
+- Bitwise Majority Construction
+
+### DSA
+- Search In Rotated Sorted Array — Pivot Detection + Binary Search
 
 ---
 
