@@ -352,6 +352,9 @@ Current Progress:
 - POSIX message queues have been introduced and should receive one or two reinforcement exercises.
 - Binary-search based interview problems are becoming increasingly comfortable.
 - New Linux APIs generally require one guided exposure before becoming comfortable.
+- Sliding-window patterns are beginning to feel natural and should receive additional practice.
+- Monotonic-stack problems have been introduced and need reinforcement.
+- select() has been introduced and should receive one or two follow-up exercises.
 
 Bit Manipulation Progress:
 
@@ -1153,6 +1156,27 @@ By placements, aim to become someone who can:
 ### DSA
 - Search In Rotated Sorted Array — Pivot Detection + Binary Search
 
+---
+
+## Day 18
+
+### C / Systems
+- mini_shell_v13.c — STDERR Redirection (2>)
+- select_demo.c — I/O Multiplexing / select()
+
+### Linux
+- STDERR vs STDOUT Redirection
+- select() API
+- FD Sets (FD_ZERO / FD_SET / FD_ISSET)
+- Blocking vs Timed Waiting
+
+### Bit Manipulation
+- XOR of Numbers From 1 to N — XOR Periodicity Pattern
+- Count Different Bits Between Two Numbers — XOR Distance
+
+### DSA
+- Next Greater Element — Monotonic Stack Introduction
+- Minimum Size Subarray Sum — Sliding Window Pattern
 ---
 
 
