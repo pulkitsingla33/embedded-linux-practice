@@ -352,9 +352,11 @@ Current Progress:
 - POSIX message queues have been introduced and should receive one or two reinforcement exercises.
 - Binary-search based interview problems are becoming increasingly comfortable.
 - New Linux APIs generally require one guided exposure before becoming comfortable.
-- Sliding-window patterns are beginning to feel natural and should receive additional practice.
-- Monotonic-stack problems have been introduced and need reinforcement.
 - select() has been introduced and should receive one or two follow-up exercises.
+- Sliding-window patterns are now becoming comfortable.
+- Monotonic-stack intuition is improving and should continue receiving reinforcement.
+- Shared-memory synchronization has been practiced using both mutexes and semaphores.
+- poll() has been introduced and can be considered equivalent-level familiarity to select().
 
 Bit Manipulation Progress:
 
@@ -1177,6 +1179,29 @@ By placements, aim to become someone who can:
 ### DSA
 - Next Greater Element — Monotonic Stack Introduction
 - Minimum Size Subarray Sum — Sliding Window Pattern
+---
+
+## Day 19
+
+### C / Systems
+- mini_shell_v14.c — Combined STDOUT/STDERR Redirection
+- poll_demo.c — poll() Based I/O Multiplexing
+- shared_counter_semaphore.c — Shared Memory + Semaphore Synchronization
+
+### Linux
+- poll() API
+- struct pollfd
+- POLLIN Event Handling
+- Process-Shared Semaphores
+- Synchronization Using sem_wait / sem_post
+
+### Bit Manipulation
+- Isolate Rightmost Consecutive Set-Bit Block — Mask Construction
+- Count Numbers With Exactly One Set Bit — Power-of-Two Pattern
+
+### DSA
+- Daily Temperatures — Monotonic Stack Reinforcement
+- Longest Substring With At Most K Distinct Characters — Sliding Window + Hash Map
 ---
 
 
