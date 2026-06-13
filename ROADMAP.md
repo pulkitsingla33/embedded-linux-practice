@@ -354,9 +354,11 @@ Current Progress:
 - New Linux APIs generally require one guided exposure before becoming comfortable.
 - select() has been introduced and should receive one or two follow-up exercises.
 - Sliding-window patterns are now becoming comfortable.
-- Monotonic-stack intuition is improving and should continue receiving reinforcement.
 - Shared-memory synchronization has been practiced using both mutexes and semaphores.
 - poll() has been introduced and can be considered equivalent-level familiarity to select().
+- Producer-consumer synchronization has been implemented using shared memory and semaphores.
+- Register-style bit manipulation and field extraction are becoming comfortable.
+- Monotonic-stack problems still require reinforcement before they become intuitive.
 
 Bit Manipulation Progress:
 
@@ -1202,6 +1204,28 @@ By placements, aim to become someone who can:
 ### DSA
 - Daily Temperatures — Monotonic Stack Reinforcement
 - Longest Substring With At Most K Distinct Characters — Sliding Window + Hash Map
+---
+
+## Day 20
+
+### C / Systems
+- mini_shell_v15.c — Input Redirection (<)
+- shared_mem_producer_consumer.c — Shared Memory Producer Consumer
+
+### Linux
+- STDIN Redirection
+- Producer Consumer Synchronization
+- Shared Memory Circular Buffers
+- Semaphore-Based Resource Coordination
+
+### Bit Manipulation
+- Extract Bit Field — Register Parsing
+- Circular Bit Rotation — Hardware-Style Bit Operations
+
+### DSA
+- Largest Rectangle In Histogram — Monotonic Stack
+- Longest Repeating Character Replacement — Sliding Window + Frequency Tracking
+
 ---
 
 
