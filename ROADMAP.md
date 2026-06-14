@@ -343,22 +343,24 @@ Preferred problem categories:
 
 Current Progress:
 - Shared-memory IPC has been introduced and should receive additional practice.
-- Shell project now covers most core interview-worthy shell features.
 - Hashing-based DSA problems are becoming comfortable.
 - STL usage is no longer a major bottleneck.
 - Edge-case handling and defensive programming should be emphasized in future exercises.
 - Two-pointer patterns are becoming increasingly comfortable.
-- Bit manipulation should now focus on logic and state-encoding problems rather than basic XOR exercises.
 - POSIX message queues have been introduced and should receive one or two reinforcement exercises.
 - Binary-search based interview problems are becoming increasingly comfortable.
 - New Linux APIs generally require one guided exposure before becoming comfortable.
 - select() has been introduced and should receive one or two follow-up exercises.
-- Sliding-window patterns are now becoming comfortable.
 - Shared-memory synchronization has been practiced using both mutexes and semaphores.
 - poll() has been introduced and can be considered equivalent-level familiarity to select().
 - Producer-consumer synchronization has been implemented using shared memory and semaphores.
 - Register-style bit manipulation and field extraction are becoming comfortable.
-- Monotonic-stack problems still require reinforcement before they become intuitive.
+- Sliding-window problems can now be solved comfortably without editorials.
+- Shell project has reached feature-complete status for placement purposes.
+- Future bit-manipulation practice should emphasize state encoding, and embedded-style reasoning rather than basic bit scanning.
+- Monotonic-stack problems are understood after editorials but still require repetition before becoming intuitive.
+
+Progress to harder graph/heap/advanced problems only after these patterns feel natural.
 
 Bit Manipulation Progress:
 
@@ -372,15 +374,15 @@ Foundational bit-manipulation patterns are becoming comfortable:
 - bitwise arithmetic
 
 Future bit-manipulation practice should emphasize:
-- advanced logic problems
-- embedded-oriented register/protocol problems
-- state encoding problems
-- bitset-based algorithms
-- tricky interview questions
+- state encoding
+- bitset algorithms
+- subset-mask reasoning
+- mathematical bit logic
+- advanced interview bit-manipulation problems
+
+Avoid simple register extraction and protocol-parsing exercises unless they introduce a genuinely new concept.
 
 Avoid repeating foundational XOR-only exercises unless used for revision.
-
-Progress to harder graph/heap/advanced problems only after these patterns feel natural.
 
 ---
 
@@ -1226,6 +1228,27 @@ By placements, aim to become someone who can:
 - Largest Rectangle In Histogram — Monotonic Stack
 - Longest Repeating Character Replacement — Sliding Window + Frequency Tracking
 
+---
+
+## Day 21
+
+### C / Systems
+- mini_shell_v16.c — Combined Input + Append Redirection
+- shared_mem_producer_consumer_ring_buffer.c — Circular Buffer Producer Consumer
+
+### Linux
+- Multiple File Descriptor Redirections
+- Shared Memory Circular Buffer Design
+- Producer Consumer Architecture
+- Semaphore Protected Ring Buffers
+
+### Bit Manipulation
+- Decode Packed Register — Firmware Register Parsing
+- Count Trailing Ones — Bit State Scanning
+
+### DSA
+- Sum Of Subarray Minimums — Monotonic Stack + Contribution Technique
+- Longest Substring Without Repeating Characters (Revisited) — Sliding Window Reinforcement
 ---
 
 
