@@ -37,6 +37,8 @@ void *worker_thread(void *arg)
     {
         Task task;
 
+        pthread_mutex_lock(&queue_mutex);
+
         while(queue_size == 0 && !shutdown)
         {
             pthread_cond_wait(&queue_cond, &queue_mutex);

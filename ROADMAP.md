@@ -357,8 +357,10 @@ Current Progress:
 - Register-style bit manipulation and field extraction are becoming comfortable.
 - Sliding-window problems can now be solved comfortably without editorials.
 - Shell project has reached feature-complete status for placement purposes.
-- Future bit-manipulation practice should emphasize state encoding, and embedded-style reasoning rather than basic bit scanning.
 - Monotonic-stack problems are understood after editorials but still require repetition before becoming intuitive.
+- Condition variables and thread-pool style synchronization have been introduced.
+- Binary Search on Answer has been introduced and requires reinforcement.
+- Monotonic deque patterns have been introduced and require reinforcement.
 
 Progress to harder graph/heap/advanced problems only after these patterns feel natural.
 
@@ -380,7 +382,7 @@ Future bit-manipulation practice should emphasize:
 - mathematical bit logic
 - advanced interview bit-manipulation problems
 
-Avoid simple register extraction and protocol-parsing exercises unless they introduce a genuinely new concept.
+Avoid simple register extraction, protocol-parsing, and basic bit-scanning exercises exercises unless they introduce a genuinely new concept.
 
 Avoid repeating foundational XOR-only exercises unless used for revision.
 
@@ -1249,6 +1251,28 @@ By placements, aim to become someone who can:
 ### DSA
 - Sum Of Subarray Minimums — Monotonic Stack + Contribution Technique
 - Longest Substring Without Repeating Characters (Revisited) — Sliding Window Reinforcement
+---
+
+## Day 22
+
+### C / Systems
+- mini_shell_v17.c — Shell Robustness / Error Handling
+- mini_mem_tracker.c — Memory Tracking and Leak Detection
+- thread_pool.c — Thread Pool / Condition Variables
+
+### Linux
+- Defensive Programming
+- Condition Variables (pthread_cond_t)
+- Worker Thread Architecture
+- Task Queue Design
+
+### Bit Manipulation
+- Maximum XOR Pair Using Binary Trie (Revisited)
+- Count Pairs Differing By Exactly One Bit — Hamming Distance Logic
+
+### DSA
+- Binary Search On Answer (Introduced)
+- Sliding Window Maximum (Revisited)
 ---
 
 
