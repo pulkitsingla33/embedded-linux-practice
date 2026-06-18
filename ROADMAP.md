@@ -360,9 +360,12 @@ Current Progress:
 - Condition variables and thread-pool style synchronization have been introduced.
 - Monotonic deque patterns have been introduced and require reinforcement.
 - Fixed-size memory pools have been implemented and basic allocator design is understood.
-- Binary Search on Answer is becoming more familiar but still requires reinforcement.
-- Monotonic-stack fundamentals are becoming increasingly comfortable.
 - Subset-mask based bit-manipulation problems have been introduced and should receive additional practice.
+- Prefix XOR techniques have been introduced and should receive additional practice.
+- Binary Trie based problems are becoming comfortable.
+- Binary Search on Answer is beginning to feel natural.
+- Monotonic Stack patterns are becoming increasingly comfortable and require only reinforcement.
+- Event-loop and scheduler style systems problems have been introduced.
 
 Progress to harder graph/heap/advanced problems only after these patterns feel natural.
 
@@ -1294,6 +1297,27 @@ By placements, aim to become someone who can:
 - Capacity To Ship Packages Within D Days — Binary Search On Answer
 - Next Smaller Element — Monotonic Stack Reinforcement
 ---
+## Day 24
+
+### C / Systems
+- mem_pool_allocator_v2.c — Memory Pool Validation / Double-Free Protection
+- delayed_task_scheduler.c — Event Scheduling / Timed Task Execution
+
+### Linux
+- Event Loop Design
+- Delayed Task Scheduling
+- Priority Ordered Task Queues
+- Allocator Robustness
+
+### Bit Manipulation
+- Sum Of XOR Of All Pairs — Contribution Technique Reinforcement
+- Maximum XOR Subarray — Prefix XOR + Binary Trie
+
+### DSA
+- Split Array Largest Sum — Binary Search On Answer Reinforcement
+- Stock Span Problem — Monotonic Stack Reinforcement
+---
+
 
 
 # FORMAT TO FOLLOW
