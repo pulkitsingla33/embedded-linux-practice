@@ -357,10 +357,12 @@ Current Progress:
 - Register-style bit manipulation and field extraction are becoming comfortable.
 - Sliding-window problems can now be solved comfortably without editorials.
 - Shell project has reached feature-complete status for placement purposes.
-- Monotonic-stack problems are understood after editorials but still require repetition before becoming intuitive.
 - Condition variables and thread-pool style synchronization have been introduced.
-- Binary Search on Answer has been introduced and requires reinforcement.
 - Monotonic deque patterns have been introduced and require reinforcement.
+- Fixed-size memory pools have been implemented and basic allocator design is understood.
+- Binary Search on Answer is becoming more familiar but still requires reinforcement.
+- Monotonic-stack fundamentals are becoming increasingly comfortable.
+- Subset-mask based bit-manipulation problems have been introduced and should receive additional practice.
 
 Progress to harder graph/heap/advanced problems only after these patterns feel natural.
 
@@ -380,6 +382,7 @@ Future bit-manipulation practice should emphasize:
 - bitset algorithms
 - subset-mask reasoning
 - mathematical bit logic
+- contribution techniques
 - advanced interview bit-manipulation problems
 
 Avoid simple register extraction, protocol-parsing, and basic bit-scanning exercises exercises unless they introduce a genuinely new concept.
@@ -429,12 +432,8 @@ Learn:
 
 ## Embedded-Oriented Bit Logic
 Practice:
-- register field extraction
-- status register parsing
-- protocol packet parsing
 - CRC basics
 - bit packing/unpacking
-- packet decoding
 - state-machine encoding
 
 ---
@@ -1273,6 +1272,27 @@ By placements, aim to become someone who can:
 ### DSA
 - Binary Search On Answer (Introduced)
 - Sliding Window Maximum (Revisited)
+---
+
+## Day 23
+
+### C / Systems
+- mem_pool_allocator.c — Fixed Size Memory Pool Allocator
+- bounded_blocking_queue.c — Mutex + Condition Variable Queue
+
+### Linux
+- Memory Pool Design
+- Condition Variable Based Synchronization
+- Blocking Queue Architecture
+- Resource Lifecycle Management
+
+### Bit Manipulation
+- Total XOR Of All Pairs — Contribution Technique
+- Count Subsets With XOR = K — Subset Mask Enumeration
+
+### DSA
+- Capacity To Ship Packages Within D Days — Binary Search On Answer
+- Next Smaller Element — Monotonic Stack Reinforcement
 ---
 
 
