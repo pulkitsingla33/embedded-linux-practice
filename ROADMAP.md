@@ -331,6 +331,7 @@ Emphasis:
 - repetition over difficulty
 - pattern recognition over speed
 - STL familiarity over implementation from scratch
+ 
 
 Preferred problem categories:
 - hashing
@@ -361,13 +362,20 @@ Current Progress:
 - Monotonic deque patterns have been introduced and require reinforcement.
 - Fixed-size memory pools have been implemented and basic allocator design is understood.
 - Subset-mask based bit-manipulation problems have been introduced and should receive additional practice.
-- Prefix XOR techniques have been introduced and should receive additional practice.
 - Binary Trie based problems are becoming comfortable.
-- Binary Search on Answer is beginning to feel natural.
-- Monotonic Stack patterns are becoming increasingly comfortable and require only reinforcement.
 - Event-loop and scheduler style systems problems have been introduced.
+- Prefix XOR patterns are becoming increasingly comfortable.
+- Binary Search on Answer can now be solved independently for common interview variants.
+- Monotonic Stack patterns are becoming comfortable and now primarily require reinforcement.
+- Memory allocator design has expanded from pools to slab-style allocators.
 
 Progress to harder graph/heap/advanced problems only after these patterns feel natural.
+
+Reduce future emphasis on sliding window
+Increase future emphasis on
+- Prefix XOR
+- Advanced Bit logic
+- Memory Management Designs
 
 Bit Manipulation Progress:
 
@@ -1316,6 +1324,27 @@ By placements, aim to become someone who can:
 ### DSA
 - Split Array Largest Sum — Binary Search On Answer Reinforcement
 - Stock Span Problem — Monotonic Stack Reinforcement
+---
+
+## Day 25
+
+### C / Systems
+- slab_allocator.c — Multi-Slab Memory Allocation
+- reader_writer_lock.c — Reader-Writer Synchronization
+
+### Linux
+- Slab Allocator Design
+- Multi-Pool Memory Management
+- Reader-Preference Synchronization
+- Concurrency Control
+
+### Bit Manipulation
+- Count Subarrays With XOR = K — Prefix XOR + Hash Map
+- Maximum XOR Pair Without Trie — Greedy Bit Construction
+
+### DSA
+- Allocate Minimum Number Of Pages — Binary Search On Answer Reinforcement
+- Next Greater Element Circular Array — Monotonic Stack + Circular Traversal
 ---
 
 
