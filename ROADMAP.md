@@ -364,14 +364,18 @@ Current Progress:
 - Subset-mask based bit-manipulation problems have been introduced and should receive additional practice.
 - Binary Trie based problems are becoming comfortable.
 - Event-loop and scheduler style systems problems have been introduced.
-- Prefix XOR patterns are becoming increasingly comfortable.
-- Binary Search on Answer can now be solved independently for common interview variants.
-- Monotonic Stack patterns are becoming comfortable and now primarily require reinforcement.
 - Memory allocator design has expanded from pools to slab-style allocators.
+- Binary Search on Answer is now a comfortable pattern for common interview variants.
+- Prefix XOR reasoning is improving and should continue receiving reinforcement.
+- Multi-threaded synchronization patterns are becoming comfortable.
+- Monotonic Stack patterns are now primarily in reinforcement mode rather than introduction mode.
 
 Progress to harder graph/heap/advanced problems only after these patterns feel natural.
 
-Reduce future emphasis on sliding window
+Reduce future emphasis on
+- Sliding window
+- Monotonic stack Basics
+
 Increase future emphasis on
 - Prefix XOR
 - Advanced Bit logic
@@ -1345,6 +1349,25 @@ By placements, aim to become someone who can:
 ### DSA
 - Allocate Minimum Number Of Pages — Binary Search On Answer Reinforcement
 - Next Greater Element Circular Array — Monotonic Stack + Circular Traversal
+---
+
+## Day 26
+
+### C / Systems
+- multi_producer_single_consumer.c — Multi-Producer Queue Synchronization
+
+### Linux
+- Multi-Producer Single-Consumer Design
+- Semaphore + Mutex Coordination
+- Queue Ownership and Synchronization
+
+### Bit Manipulation
+- Count Triplets With XOR = 0 — Prefix XOR + Counting Logic
+- Maximum XOR Between Two Subsets — XOR Reasoning / Mathematical Bit Logic
+
+### DSA
+- Aggressive Cows — Binary Search On Answer Reinforcement
+- Online Stock Span (Conceptually Reviewed) — Monotonic Stack Design Pattern
 ---
 
 
