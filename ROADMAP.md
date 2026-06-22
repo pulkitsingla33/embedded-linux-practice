@@ -1,6 +1,8 @@
 # Embedded / Systems Placement Preparation Roadmap
-## Duration: 2 Months
-## Target Roles:
+
+**Duration:** 2 Months
+
+**Target Roles:**
 - Embedded Systems
 - Firmware
 - Systems Programming
@@ -8,749 +10,573 @@
 
 ---
 
-# PREPARATION PHILOSOPHY
+## Preparation Philosophy
 
 This roadmap is:
-- implementation-heavy
+- Implementation-heavy
 - Linux-focused
-- systems-oriented
-- debugging-oriented
-- low on passive theory
-- focused on engineering depth
+- Systems-oriented
+- Debugging-oriented
+- Low on passive theory
+- Focused on engineering depth
 
-Main goals:
-- strong C programming
+**Main goals:**
+- Strong C programming
 - Linux fluency
-- systems programming confidence
-- debugging maturity
-- placement-level DSA
-- strong interview discussions
+- Systems programming confidence
+- Debugging maturity
+- Placement-level DSA
+- Strong interview discussions
 
 ---
 
-# DAILY TIME TARGET
+## Daily Time Target
 
-Average:
-- 3-4 hrs/day
+**Average:** 3–4 hrs/day
 
-Structure:
-- 1.5 hrs systems/Linux/embedded
-- 1 hr DSA + bit manipulation
-- 1–1.5 hrs implementation/debugging/project work
+**Structure:**
+- 1.5 hrs — systems / Linux / embedded
+- 1 hr — DSA + bit manipulation
+- 1–1.5 hrs — implementation / debugging / project work
 
-Daily task structure:
-- 3 systems/Linux questions
+**Daily task structure:**
+- Driver project tasks
 - 2 bit-manipulation questions
 - 2 DSA questions (C++ + STL)
 
-Theory revision is self-directed
+Theory revision is self-directed (see [Theory Revision Policy](#theory-revision-policy)).
 
 ---
 
-# MAIN TRACKS
+## Main Tracks
 
-There are 6 parallel tracks:
+There are 7 parallel tracks:
 
 1. C + Systems Programming
 2. Linux Practical Skills
 3. OS + Embedded Concepts
 4. Bit Manipulation + Logic Building
 5. Placement DSA
-6. Systems Project
+7. Linux Device Driver Project
 
 ---
 
-# WEEK 1 — Memory, Pointers, Linux, Debugging
+## Weekly Plan
 
-## Goals
+### Week 1 — Memory, Pointers, Linux, Debugging
+
+**Goals**
 - Become extremely comfortable with memory and pointers
 - Build Linux workflow confidence
 - Improve implementation fluency
 - Start debugging seriously
 
----
-
-# C / Systems Topics
-
-## Study + Implement
-- memory layout
-- stack vs heap
-- pointer arithmetic
-- arrays vs pointers
-- dynamic memory
-- structs/unions
-- linked list internals
-- file IO basics
+**C / Systems Topics — Study + Implement**
+- Memory layout
+- Stack vs heap
+- Pointer arithmetic
+- Arrays vs pointers
+- Dynamic memory
+- Structs/unions
+- Linked list internals
+- File IO basics
 - Makefiles
 
----
-
-# Linux Topics
-
-## Practice Daily
-- gcc
-- gdb
-- valgrind
+**Linux Topics — Practice Daily**
+- gcc, gdb, valgrind
 - Makefiles
-- grep/find/xargs
+- grep / find / xargs
 - permissions
-- ps/top/kill
+- ps / top / kill
 - shell scripting
 - vim basics
 
----
+**Coding Implementations**
 
-# Coding Implementations
+*Data structures (implement from scratch in C):*
+- Dynamic vector
+- Singly linked list
+- Doubly linked list
+- Stack
+- Queue
+- Circular buffer
 
-## Data Structures
-Implement from scratch in C:
-- dynamic vector
-- singly linked list
-- doubly linked list
-- stack
-- queue
-- circular buffer
-
----
-
-# String/Memory Functions
-
-Implement:
-- memcpy
-- memmove
-- strtok
-- memset
-- calloc
+*String/memory functions (implement):*
+- memcpy, memmove, strtok, memset, calloc
 - realloc simulation
 
----
+*Linux/system utilities (build):*
+- Mini grep
+- Hex dump utility
+- File copy utility
+- Log parser
 
-# Linux/System Utilities
+**Bit Manipulation**
 
-Build:
-- mini grep
-- hex dump utility
-- file copy utility
-- log parser
-
----
-
-# Bit Manipulation
-
-## Focus Area
-Bit-manipulation practice should now be divided into:
-
+Focus area — divide practice into:
 1. Interview-style logic problems
 2. Embedded/systems-oriented bit reasoning
 
-Focus should be on:
-- XOR reasoning
-- state transitions
-- bitwise optimization
-- packet/register parsing
-- encoding/decoding
-- greedy bit logic
-- masking-based algorithms
+Focus on: XOR reasoning, state transitions, bitwise optimization, packet/register parsing, encoding/decoding, greedy bit logic, masking-based algorithms.
 
-Avoid spending too much time on:
-- repetitive set/reset/toggle-only exercises
+Avoid spending too much time on: repetitive set/reset/toggle-only exercises.
 
----
+*Topics:* XOR tricks, bit masks, field extraction, bit packing/unpacking, parity, power-of-2 logic, state compression, binary transformations, bitwise arithmetic, bitmap logic.
 
-## Topics
-- XOR tricks
-- bit masks
-- field extraction
-- bit packing/unpacking
-- parity
-- power-of-2 logic
-- state compression
-- binary transformations
-- bitwise arithmetic
-- bitmap logic
+*Practice problems:* reverse bits, next power of 2, missing number using XOR, two non-repeating numbers, packet parsing, bitmap implementation, subset masks, maximum XOR pair, bitwise addition, Gray code, parity calculation, protocol/register decoding.
 
-## Practice Problems
-- reverse bits
-- next power of 2
-- missing number using XOR
-- two non-repeating numbers
-- packet parsing
-- bitmap implementation
-- subset masks
-- maximum XOR pair
-- bitwise addition
-- Gray code
-- parity calculation
-- protocol/register decoding
+**Debugging Focus**
+
+Use: gdb, valgrind.
+Debug: segmentation faults, dangling pointers, double free, memory leaks.
 
 ---
 
-# Debugging Focus
+### Week 2 — Processes, Threads, Synchronization
 
-Use:
-- gdb
-- valgrind
-
-Debug:
-- segmentation faults
-- dangling pointers
-- double free
-- memory leaks
-
----
-
-# WEEK 2 — Processes, Threads, Synchronization
-
-## Goals
+**Goals**
 - Understand Linux execution model
 - Build concurrency intuition
 - Learn synchronization practically
 
----
+**Systems Topics — Study + Implement**
+- fork(), exec(), wait()
+- pipes, signals
+- pthreads, mutexes, semaphores
+- race conditions, deadlocks
 
-# Systems Topics
+**Implementations — Build**
+- Process tree creator
+- Parent-child IPC
+- Multithreaded counter
+- Producer-consumer
+- Thread-safe queue
+- Command executor
+- Parallel file processor
 
-Study + Implement:
-- fork()
-- exec()
-- wait()
-- pipes
-- signals
-- pthreads
-- mutexes
-- semaphores
-- race conditions
-- deadlocks
+**Debugging Focus**
+Debug: race conditions, deadlocks, thread synchronization bugs.
+Use: gdb, valgrind, printf tracing.
 
----
-
-# Implementations
-
-Build:
-- process tree creator
-- parent-child IPC
-- multithreaded counter
-- producer-consumer
-- thread-safe queue
-- command executor
-- parallel file processor
-
----
-
-# Debugging Focus
-
-Debug:
-- race conditions
-- deadlocks
-- thread synchronization bugs
-
-Use:
-- gdb
-- valgrind
-- printf tracing
-
----
-
-# Bit Manipulation
-
-## Advanced Problems
-- single number II/III
-- bitwise addition without +
-- subset generation using bits
-- parity calculation
-- maximum XOR
+**Bit Manipulation — Advanced Problems**
+- Single Number II/III
+- Bitwise addition without +
+- Subset generation using bits
+- Parity calculation
+- Maximum XOR
 - XOR partitioning
-- bitmask-based logic
-- bitwise state encoding
+- Bitmask-based logic
+- Bitwise state encoding
 
----
-
-# DSA Focus
+**DSA Focus**
 
 Priority is understanding patterns incrementally.
 
-Phase 1:
-- arrays
-- strings
-- vectors
-- hash maps
-- hash sets
-- stacks
-- queues
-- linked lists
-- binary search
-- two pointers
+*Phase 1:* arrays, strings, vectors, hash maps, hash sets, stacks, queues, linked lists, binary search, two pointers.
 
-Phase 2:
-- sliding window
-- interval problems
-- heap problems
-- DFS/BFS
-- recursion/backtracking basics
+*Phase 2:* sliding window, interval problems, heap problems, DFS/BFS, recursion/backtracking basics.
 
-Phase 3:
-- graph patterns
-- monotonic deque
-- greedy reasoning
-- design-style interview questions
+*Phase 3:* graph patterns, monotonic deque, greedy reasoning, design-style interview questions.
 
-Rule:
-Do not move aggressively to Phase 2 or Phase 3 until Phase 1 patterns feel comfortable.
+> **Rule:** Do not move aggressively to Phase 2 or Phase 3 until Phase 1 patterns feel comfortable.
 
-Do NOT optimize for:
-- hardcore competitive programming
-- advanced DP-heavy problems
-- obscure STL/template tricks
+Do **NOT** optimize for: hardcore competitive programming, advanced DP-heavy problems, obscure STL/template tricks.
 
-# DSA LEARNING PHILOSOPHY
+**DSA Learning Philosophy**
 
-Goal:
-- Build pattern recognition gradually.
-- Learn interview problem families.
-- Use C++ STL comfortably.
+Goal: build pattern recognition gradually, learn interview problem families, use C++ STL comfortably.
 
 Important:
 - It is acceptable to study editorials initially.
 - Pattern recognition is more important than independent solving in the beginning.
 - Independence will naturally improve after repeated exposure.
 
-Current Focus:
-- Simpler questions solved independently.
-- Medium questions solved with hints/editorials.
-- Understanding patterns over memorizing solutions.
+Current focus: simpler questions solved independently; medium questions solved with hints/editorials; understanding patterns over memorizing solutions.
 
-Remember:
-The objective is not competitive programming.
-The objective is becoming comfortable with common placement interview patterns.
+> The objective is not competitive programming — it's becoming comfortable with common placement interview patterns.
 
-Current DSA Progress:
+Emphasis: repetition over difficulty, pattern recognition over speed, STL familiarity over implementation from scratch.
 
-Phase 1 is still the primary focus.
-
-Emphasis:
-- repetition over difficulty
-- pattern recognition over speed
-- STL familiarity over implementation from scratch
- 
-
-Preferred problem categories:
-- hashing
-- arrays
-- strings
-- stacks
-- queues
-- binary search
-- two pointers
-
-Current Progress:
-- Shared-memory IPC has been introduced and should receive additional practice.
-- Hashing-based DSA problems are becoming comfortable.
-- STL usage is no longer a major bottleneck.
-- Edge-case handling and defensive programming should be emphasized in future exercises.
-- Two-pointer patterns are becoming increasingly comfortable.
-- POSIX message queues have been introduced and should receive one or two reinforcement exercises.
-- Binary-search based interview problems are becoming increasingly comfortable.
-- New Linux APIs generally require one guided exposure before becoming comfortable.
-- select() has been introduced and should receive one or two follow-up exercises.
-- Shared-memory synchronization has been practiced using both mutexes and semaphores.
-- poll() has been introduced and can be considered equivalent-level familiarity to select().
-- Producer-consumer synchronization has been implemented using shared memory and semaphores.
-- Register-style bit manipulation and field extraction are becoming comfortable.
-- Sliding-window problems can now be solved comfortably without editorials.
-- Shell project has reached feature-complete status for placement purposes.
-- Condition variables and thread-pool style synchronization have been introduced.
-- Monotonic deque patterns have been introduced and require reinforcement.
-- Fixed-size memory pools have been implemented and basic allocator design is understood.
-- Subset-mask based bit-manipulation problems have been introduced and should receive additional practice.
-- Binary Trie based problems are becoming comfortable.
-- Event-loop and scheduler style systems problems have been introduced.
-- Memory allocator design has expanded from pools to slab-style allocators.
-- Multi-threaded synchronization patterns are becoming comfortable.
-- Monotonic Stack patterns are now primarily in reinforcement mode rather than introduction mode.
-- Binary Search on Answer is now a comfortable interview pattern.
-- Greedy + Monotonic Stack hybrid problems have been introduced and should receive additional practice.
-- Advanced Prefix XOR and Binary Trie counting problems remain an active focus area.
+Preferred problem categories: hashing, arrays, strings, stacks, queues, binary search, two pointers.
 
 Progress to harder graph/heap/advanced problems only after these patterns feel natural.
 
-Reduce future emphasis on
-- Sliding window
-- Monotonic stack Basics
-- Basic binary-search-on-answer variants
-
-Increase future emphasis on
-- Prefix XOR
-- Binary Trie Counting Problems
-- Greedy reasoning problems
-
-Bit Manipulation Progress:
-
-Foundational bit-manipulation patterns are becoming comfortable:
-- XOR cancellation
-- XOR partitioning
-- power-of-two reasoning
-- bit masking
-- register extraction
-- bit scanning
-- bitwise arithmetic
-
-Future bit-manipulation practice should emphasize:
-- state encoding
-- bitset algorithms
-- subset-mask reasoning
-- mathematical bit logic
-- contribution techniques
-- advanced interview bit-manipulation problems
-
-Avoid simple register extraction, protocol-parsing, and basic bit-scanning exercises exercises unless they introduce a genuinely new concept.
-
-Avoid repeating foundational XOR-only exercises unless used for revision.
-
 ---
 
-# WEEK 3 — Advanced Linux Systems Programming + IPC + Debugging
+### Week 3 — Advanced Linux Systems Programming + IPC + Debugging
 
-## Goals
+**Goals**
 - Become comfortable with real Linux APIs
 - Improve systems design thinking
 
----
+**Topics**
+- Advanced Linux systems programming
+- IPC (pipes, shared memory, message queues)
+- File descriptor management
+- Process and thread debugging
+- Resource lifecycle management
+- Continued DSA foundation building
+- Advanced bit manipulation logic
 
-# Topics
-- Advanced Linux Systems Programming
-- IPC (Pipes, Shared Memory, Message Queues)
-- File Descriptor Management
-- Process and Thread Debugging
-- Resource Lifecycle Management
-- Continued DSA Foundation Building
-- Advanced Bit Manipulation Logic
+**Implementations — Build**
+- Multi-client chat server
+- Async logger
+- Terminal chat application
 
----
-
-# Implementations
-
-Build:
-- multi-client chat server
-- async logger
-- terminal chat application
-
----
-
-# Linux Topics
-
-Learn:
+**Linux Topics — Learn**
 - strace
 - lsof
 - process inspection
 
----
-
-# Bit Manipulation
-
-## Embedded-Oriented Bit Logic
-Practice:
+**Bit Manipulation — Embedded-Oriented Logic**
 - CRC basics
-- bit packing/unpacking
-- state-machine encoding
+- Bit packing/unpacking
+- State-machine encoding
+
+**DSA Topics**
+- Stacks, queues
+- Trees basics
+- Binary search
+- Sliding window
 
 ---
 
-# DSA
+### Week 4 — OS + Embedded Systems + Interview-Oriented DSA
 
-Topics:
-- stacks
-- queues
-- trees basics
-- binary search
-- sliding window
-
----
-
-# WEEK 4 — OS + Embedded Systems + Interview-Oriented DSA
-
-## Goals
+**Goals**
 - Strengthen interview discussions
 - Build systems intuition
 - Connect embedded + OS concepts
 
----
-
-# OS Topics
-
-Study:
-- scheduling
-- virtual memory
-- paging
-- TLB
-- context switching
-- synchronization internals
+**OS Topics — Study**
+- Scheduling
+- Virtual memory, paging, TLB
+- Context switching
+- Synchronization internals
 - IPC
-- cache concepts
+- Cache concepts
 
----
-
-# Embedded Topics
-
-Study:
-- interrupts
-- DMA
-- memory-mapped IO
+**Embedded Topics — Study**
+- Interrupts, DMA
+- Memory-mapped IO
 - volatile
-- cache coherency basics
+- Cache coherency basics
 - RTOS scheduling
 - UART/SPI/I2C/CAN
-- polling vs interrupts
+- Polling vs interrupts
+
+**Implementations — Build**
+- Memory pool allocator
+- Simple scheduler simulation
+- Interrupt/event simulation
+- Protocol parser
+
+**Debugging Focus**
+- Heap corruption debugging
+- Synchronization debugging
+- Race-condition analysis
 
 ---
 
-# Implementations
+### Week 5 — Placement DSA + Systems Coding
 
-Build:
-- memory pool allocator
-- simple scheduler simulation
-- interrupt/event simulation
-- protocol parser
-
----
-
-# Debugging Focus
-
-Practice:
-- heap corruption debugging
-- synchronization debugging
-- race-condition analysis
-
----
-
-# WEEK 5 — Placement DSA + Systems Coding
-
-## Goals
+**Goals**
 - Become OA-capable
 - Improve implementation speed
 - Improve logic building
 
----
-
-# DSA Topics
-
-ONLY placement-relevant topics:
-- arrays
-- strings
-- hashing
-- sliding window
-- binary search
-- stacks/queues
-- trees basics
+**DSA Topics** (ONLY placement-relevant)
+- Arrays, strings, hashing
+- Sliding window, binary search
+- Stacks/queues
+- Trees basics
 
 NO hardcore competitive programming.
 
----
-
-# Bit Manipulation
-
-## Tricky Problems
-Practice:
-- maximum XOR pair
-- bitmask DP basics
-- subset masks
-- missing/repeating numbers
-- unique number problems
+**Bit Manipulation — Tricky Problems**
+- Maximum XOR pair
+- Bitmask DP basics
+- Subset masks
+- Missing/repeating numbers
+- Unique number problems
 - Gray code
-- power set generation
-- packet/state encoding
+- Power set generation
+- Packet/state encoding
 
----
-
-# Systems Coding
-
-Implement:
+**Systems Coding — Implement**
 - LRU cache
-- memory tracker
-- command parser
-- configuration parser
+- Memory tracker
+- Command parser
+- Configuration parser
 
 ---
 
-# WEEK 6 — Main Systems Project
+### Weeks 6–8 — Linux Device Driver Project
 
-# Build ONE Strong Project
+**Goal:** Transition from Linux systems programming exercises to a substantial Linux kernel/device-driver project that can be showcased on a resume and discussed in embedded/firmware interviews. This project track gradually replaces daily standalone systems questions.
 
-Recommended options:
+#### Phase 1: Kernel Module Fundamentals
 
-## Option 1 — Mini Shell
-Features:
-- command execution
-- pipes
-- redirection
-- background jobs
-- signal handling
-- history
+**Objectives**
+- Build and load Linux kernel modules
+- Understand kernel logging and debugging
+- Understand module lifecycle
 
----
+**Topics**
+- `module_init()`, `module_exit()`
+- `printk()`
+- `dmesg`, `insmod`, `rmmod`, `lsmod`
 
-## Option 2 — Multi-threaded Logger
-Features:
-- thread-safe logging
-- async writes
-- configurable levels
-- log rotation
+**Deliverable:** `hello_driver.ko`
 
----
+#### Phase 2: Character Device Driver
 
-## Option 3 — Multi-client Chat Server
-Features:
-- sockets
-- multiple clients
-- polling/select
-- message broadcasting
+**Objectives:** Create a character driver exposed through `/dev/mychardev`.
 
----
+**Topics**
+- `alloc_chrdev_region()`
+- `cdev_init()`, `cdev_add()`
+- `class_create()`, `device_create()`
+- `file_operations`
 
-# Project Requirements
+**Operations:** `open()`, `release()`, `read()`, `write()`
 
-Must include:
+**Deliverable:** A working character driver that supports:
+```
+echo "hello" > /dev/mychardev
+cat /dev/mychardev
+```
+
+#### Phase 3: Advanced Character Driver Features
+
+**Objectives:** Add user-kernel communication features.
+
+**Topics**
+- `copy_to_user()`, `copy_from_user()`
+- `ioctl()`
+
+**Features:** `SET_VALUE`, `GET_VALUE`, `CLEAR_BUFFER`
+
+**Deliverable:** Character driver with ioctl support.
+
+#### Phase 4: Synchronization Inside Drivers
+
+**Objectives:** Learn how synchronization is performed inside kernel drivers.
+
+**Topics**
+- mutex
+- spinlock (conceptual)
+- wait queues
+
+**Features:** blocking read, blocking write, synchronization between readers/writers
+
+**Deliverable:** Thread-safe character driver.
+
+#### Phase 5: poll()/select() Support
+
+**Objectives:** Connect previous Linux systems knowledge with driver development.
+
+**Topics**
+- `poll()`, `select()`
+- wait queues
+
+**Features:** Applications should be able to `poll()` / `select()` on the driver.
+
+**Deliverable:** Event-driven character driver.
+
+#### Phase 6: UART Exploration
+
+**Objectives:** Understand Linux serial architecture using available USB-UART hardware.
+
+**Topics**
+- tty subsystem
+- serial_core
+- termios
+- baud rate configuration, parity, flow control
+
+**Deliverables**
+- User-space UART utility
+- UART communication tests using USB-UART converter
+- Study of Linux UART driver architecture
+
+#### Phase 7: I2C Driver Development
+
+**Objectives:** Learn the Linux I2C driver framework.
+
+**Topics**
+- `i2c_driver`, `i2c_client`
+- `probe()`, `remove()`
+- `i2c_transfer()`
+
+**Environment:** Use virtual/stub I2C devices if hardware is unavailable.
+
+**Deliverable:** Simple Linux I2C client driver.
+
+**Expected Outcomes** — by completion of this track:
+- Comfortable with Linux kernel modules
+- Comfortable with character drivers
+- Understand driver synchronization mechanisms
+- Understand UART driver architecture
+- Understand Linux I2C driver model
+- Possess a substantial embedded/Linux project suitable for firmware and embedded-systems interviews
+
+**Project Requirements** — must include:
 - Makefile
 - README
-- modular code
-- debugging support
-- clean architecture
+- Modular code
+- Debugging support
+- Clean architecture
 
 ---
 
-# WEEK 7 — Interview Preparation Phase
+### Week 7 — Interview Preparation Phase
 
-## Goals
+**Goals**
 - Become interview comfortable
 - Improve explanation ability
 - Improve debugging confidence
 
----
+**Practice Daily**
 
-# Practice Daily
+*Coding:* timed coding, implementation from scratch
 
-## Coding
-- timed coding
-- implementation from scratch
+*Interview topics:* OS questions, Linux questions, embedded questions, debugging scenarios
 
-## Interview Topics
-- OS questions
-- Linux questions
-- embedded questions
-- debugging scenarios
+*Discussion practice — explain:* race conditions, mutexes, virtual memory, interrupts, volatile, synchronization
 
-## Discussion Practice
-Explain:
-- race conditions
-- mutexes
-- virtual memory
-- interrupts
-- volatile
-- synchronization
+**Mock Discussions** — practice explaining:
+- Your project
+- Design decisions
+- Debugging process
+- Failures and fixes
 
 ---
 
-# Mock Discussions
+### Week 8 — Final Revision + Polish
 
-Practice explaining:
-- your project
-- design decisions
-- debugging process
-- failures and fixes
+**Revise**
 
----
+| Area | Topics |
+|---|---|
+| C | pointers, memory bugs, undefined behavior, function pointers |
+| Linux | processes, threads, synchronization, sockets, debugging tools |
+| Embedded | interrupts, DMA, protocols, RTOS basics |
+| OS | scheduling, paging, deadlocks, synchronization |
 
-# WEEK 8 — Final Revision + Polish
-
-## Revise
-
-### C
-- pointers
-- memory bugs
-- undefined behavior
-- function pointers
-
-### Linux
-- processes
-- threads
-- synchronization
-- sockets
-- debugging tools
-
-### Embedded
-- interrupts
-- DMA
-- protocols
-- RTOS basics
-
-### OS
-- scheduling
-- paging
-- deadlocks
-- synchronization
+**Final Practice**
+- Mock interviews
+- Debugging exercises
+- Timed implementation
+- Project walkthroughs
 
 ---
 
-# Final Practice
+## Progress Notes (Consolidated)
 
-- mock interviews
-- debugging exercises
-- timed implementation
-- project walkthroughs
+> This section replaces the previously scattered, repeated progress comments with a single running summary, organized by status rather than by the order notes were added.
+
+### Comfortable / Reliable
+- Hashing-based DSA problems
+- STL usage (no longer a bottleneck)
+- Two-pointer patterns
+- Binary-search interview problems
+- Sliding-window problems (solvable without editorials)
+- Register-style bit manipulation / field extraction
+- Shared-memory synchronization (mutexes and semaphores)
+- Producer-consumer synchronization (shared memory + semaphores)
+- `select()` / `poll()` (treated as equivalent-level familiarity)
+- Fixed-size memory pools / basic allocator design
+- Multi-threaded synchronization patterns
+- Monotonic stack patterns (now in reinforcement mode, not introduction)
+- Binary Search on Answer
+- Binary Trie and xor maximization based problems
+- Foundational bit manipulation: XOR cancellation, XOR partitioning, power-of-two reasoning, bit masking, register extraction, bit scanning, bitwise arithmetic
+- Shell project — feature-complete for placement purposes
+
+### Introduced, Needs 1–2 Reinforcement Exercises
+- Shared-memory IPC
+- POSIX message queues (`mq_open` / `mq_send` / `mq_receive`)
+- Monotonic deque
+- Subset-mask based bit-manipulation problems
+- Greedy + Monotonic Stack hybrid problems
+- Condition variables / thread-pool style synchronization
+- Linux kernel module
+
+### Active Focus Areas (Ongoing)
+- Event-loop / scheduler-style systems problems
+- Memory allocator design (expanded from pools to slab-style allocators)
+
+### General Notes
+- New Linux APIs generally require one guided exposure before becoming comfortable.
+- Edge-case handling and defensive programming should be emphasized in future exercises going forward.
+
+### Adjust Emphasis Going Forward
+
+**Reduce:**
+- Sliding window (basics)
+- Monotonic stack basics
+- Basic binary-search-on-answer variants
+- Simple register extraction / protocol parsing / basic bit-scanning (unless introducing a genuinely new concept)
+- Foundational XOR-only drills (unless used for revision)
+
+**Increase:**
+- Prefix XOR
+- Binary Trie counting problems
+- Greedy reasoning problems
+- State encoding
+- Bitset algorithms
+- Subset-mask reasoning
+- Mathematical bit logic
+- Contribution techniques
+- Advanced interview bit-manipulation problems
+
+> Progress to harder graph/heap/advanced DSA problems only after Phase 1/2 patterns feel natural.
 
 ---
 
-# IMPORTANT PRIORITY ORDER
+## Priority Order
 
-Current preparation emphasis:
-
-Primary Focus:
+**Primary Focus:**
 - C systems programming
 - Linux practical skills
-- debugging
-- concurrency/synchronization
+- Debugging
+- Concurrency/synchronization
 - OS and systems concepts
-- bitwise logic
-- interview-oriented DSA
+- Bitwise logic
+- Interview-oriented DSA
 
-Reduced Priority:
-- advanced networking
-- hardcore competitive programming
-- advanced kernel internals
-- excessive roadmap/theory hopping
+**Reduced Priority:**
+- Advanced networking
+- Hardcore competitive programming
+- Advanced kernel internals
+- Excessive roadmap/theory hopping
 
 ---
 
-# WHAT TO AVOID
+## What to Avoid
 
 Avoid spending too much time on:
-- advanced C++
-- competitive programming
-- advanced kernel internals
-- deep networking theory
-- excessive tutorials
-- roadmap hopping
-- implementing every DSA structure manually repeatedly
+- Advanced C++
+- Competitive programming
+- Advanced kernel internals
+- Deep networking theory
+- Excessive tutorials
+- Roadmap hopping
+- Implementing every DSA structure manually, repeatedly
 
-Prioritize:
-- systems thinking
-- Linux fluency
-- debugging
-- concurrency
-- interview-style logic problems
+Prioritize instead: systems thinking, Linux fluency, debugging, concurrency, interview-style logic problems.
 
 ---
 
-# THEORY REVISION POLICY
+## Theory Revision Policy
 
-Theory revision is not scheduled daily.
+Theory revision is **not** scheduled daily. Instead, revisit theory:
+- When a coding problem exposes a knowledge gap
+- Before interview preparation rounds
+- During dedicated revision weeks
+- When project work requires deeper understanding
 
-Instead, theory should be revised:
-- when a coding problem exposes a knowledge gap
-- before interview preparation rounds
-- during dedicated revision weeks
-- when project work requires deeper understanding
-
-Priority theory areas:
+**Priority theory areas:**
 - Operating Systems
 - Computer Architecture
 - Embedded Systems
@@ -761,27 +587,28 @@ Priority theory areas:
 - RTOS Concepts
 
 Implementation and problem-solving remain the primary learning method.
+
 ---
 
-# FINAL TARGET
+## Final Target
 
 By placements, aim to become someone who can:
-- write robust C code
-- debug independently
-- work comfortably in Linux
-- understand concurrency
-- solve placement-level coding questions
-- explain systems concepts clearly
-- discuss engineering tradeoffs confidently
-- build small systems software independently
+- Write robust C code
+- Debug independently
+- Work comfortably in Linux
+- Understand concurrency
+- Solve placement-level coding questions
+- Explain systems concepts clearly
+- Discuss engineering tradeoffs confidently
+- Build small systems software independently
 
 ---
 
-# DAILY QUESTION TRACKER
+## Daily Question Tracker
 
-## Day 1
+### Day 1
 
-### C / Systems
+#### C / Systems
 - Reverse Array — Arrays / Pointers
 - Palindrome String — Strings
 - my_strlen — Strings / Pointers
@@ -793,7 +620,7 @@ By placements, aim to become someone who can:
 - Dynamic Vector — Dynamic Memory / Heap Management
 - file_copy.c — Linux File IO / System Calls
 
-### Linux
+#### Linux
 - Linux Directory Structure Creation — Terminal Basics
 - GCC Compilation — Build Workflow
 - Makefile Creation — Build Systems
@@ -804,7 +631,7 @@ By placements, aim to become someone who can:
 - pipe() Example — IPC / Pipes
 - pthread Counter Example — Threads / Race Conditions
 
-### Bit Manipulation
+#### Bit Manipulation
 - Set/Clear/Toggle/Check nth Bit — Bit Operations
 - Count Set Bits — Kernighan Algorithm
 - Detect Power of 2 — Bit Logic
@@ -814,14 +641,14 @@ By placements, aim to become someone who can:
 - Swap Odd/Even Bits — Bit Masks
 - Integer Addition Without '+' — XOR + Carry Logic
 
-### DSA
+#### DSA
 - None yet
 
 ---
 
-## Day 2
+### Day 2
 
-### C / Systems
+#### C / Systems
 - Circular Buffer Upgrade — Robustness / Error Handling
 - Dynamic Vector Upgrade — realloc / Heap Management
 - file_copy Upgrade — Linux File IO / Robustness
@@ -829,27 +656,27 @@ By placements, aim to become someone who can:
 - Valid Parentheses — Stack Implementation
 - Binary Search — Searching Algorithms
 
-### Linux
+#### Linux
 - fork + execlp Example — Process Control
 - wait() Usage — Process Synchronization
 - Multiple Child Processes — Scheduling / Process Hierarchy
 - command_logger.sh — Shell Scripting / Logging
 
-### Bit Manipulation
+#### Bit Manipulation
 - Bitfield Extraction — Register Parsing
 - Bitmap Implementation — Bit Arrays
 - Missing Number Using XOR — XOR Reduction Logic
 - Two Non-Repeating Numbers — XOR Partitioning Logic
 
-### DSA
+#### DSA
 - Valid Parentheses — Stack
 - Binary Search — Binary Search
 
 ---
 
-## Day 3
+### Day 3
 
-### C / Systems
+#### C / Systems
 - file_copy_stats.c — Advanced File IO / Statistics
 - mini_wc.c — Low-Level File Processing
 - file_permissions.c — Linux File APIs / stat/access
@@ -859,534 +686,556 @@ By placements, aim to become someone who can:
 - Thread Pool — Worker Architecture
 - Queue Using Two Stacks — Data Structure Design
 
-### Linux
+#### Linux
 - File Descriptor Handling — Linux File IO
 - access() and stat() Usage — Linux APIs
 - search_logs.sh — Linux Search Utilities
 
-### Bit Manipulation
+#### Bit Manipulation
 - Skipped basic bit-manipulation exercises intentionally to focus more on logic-heavy/system-oriented problems
 
-### DSA
+#### DSA
 - Longest Substring Without Repeating Characters — Sliding Window
 - Queue Using Two Stacks — Stack/Queue Logic
 
 ---
 
-## Day 4
+### Day 4
 
-### C / Systems
+#### C / Systems
 - Shared Memory Example — IPC / Shared Memory
 - Shared Memory + Synchronization — Process Synchronization
 - Signal Handling — UNIX Signals
 - LRU Cache — Hashmap + Doubly Linked List
 
-### Linux
+#### Linux
 - Shared Memory APIs — shmget/shmat/shmctl
 - Signal Registration — signal()
 - Process Communication — IPC
 
-### Bit Manipulation
+#### Bit Manipulation
 - Gray Code Generator — XOR State Transitions
 - Maximum XOR Pair — Greedy Bitwise Logic
 
-### DSA
+#### DSA
 - Merge Intervals — Interval Merging
 - Floyd Cycle Detection — Fast/Slow Pointer
 - LRU Cache — Design Problem
 
 ---
 
-## Day 5
+### Day 5
 
-### C / Systems
+#### C / Systems
 - mini_shell.c — Process Execution / fork-exec-wait
 - Deadlock Demonstration — Mutex Ordering / Concurrency
 - Deadlock Fix — Lock Ordering Strategy
 
-### Linux
+#### Linux
 - execvp() Usage — Command Execution
 - Shell Loop Implementation — Process Control
 - Process Synchronization — wait()
 
-### Bit Manipulation
+#### Bit Manipulation
 - Single Number II — Bitwise State Machine Logic
 
-### DSA
+#### DSA
 - Top K Frequent Elements — Heap + Hashmap
 - Sliding Window Maximum — Monotonic Deque
 
 ---
-## Day 6
+### Day 6
 
-### C / Systems
+#### C / Systems
 - mini_shell Argument Parsing — Tokenization / execvp argv Handling
 - mini_strace_logger.c — Syscall Logging / File Descriptor Awareness
 - interrupt_handler.c — ISR Registration / Function Pointers
 
-### Linux
+#### Linux
 - execvp argv Handling — Process Execution
 - System Call Observation — open/read/write/close
 - File Descriptor Awareness — Linux IO Internals
 
-### Bit Manipulation
+#### Bit Manipulation
 - Single Number III — XOR Partitioning Logic
 
-### DSA
+#### DSA
 - Number of Islands — DFS / Grid Traversal
 - K Closest Elements — Binary Search + Two Pointers
 
 ---
 
-## Day 7
+### Day 7
 
-### C / Systems
+#### C / Systems
 - mini_shell_upgrade.c — Background Processes / Redirection / Process Lifecycle
 - File Descriptor Redirection — dup2() / UNIX IO Model
 
-### Linux
+#### Linux
 - Background Execution (&) — Foreground vs Background Processes
 - Zombie Cleanup — waitpid(..., WNOHANG)
 - Output Redirection — open() + dup2()
 - Process Lifecycle Management — fork/exec/wait Integration
 
-### Embedded / Concurrency
+#### Embedded / Concurrency
 - Lock-Free Ring Buffer (Conceptual Revision) — Single Producer Single Consumer Design
 
-### Bit Manipulation
+#### Bit Manipulation
 - Maximum XOR Using Binary Trie — Greedy Bitwise Traversal
 - Detect Opposite Signs — Sign-Bit Reasoning / XOR Logic
 
-### DSA
+#### DSA
 - Course Schedule — Graph Cycle Detection / DFS
 - Merge K Sorted Lists — Heap / Priority Queue
 
 ---
-## Day 8
+### Day 8
 
-### C / Systems
+#### C / Systems
 - mini_shell_v3.c — Command History / Circular Buffer Style State Management
 - fd_inspector.c — File Descriptors / /proc Filesystem Exploration
 
-### Linux
+#### Linux
 - /proc/self/fd Exploration — Linux Process Introspection
 - File Descriptor Lifecycle — open(), close(), opendir()
 - Shell State Management — Command History Tracking
 
-### Embedded / Concurrency
+#### Embedded / Concurrency
 - UART Packet Parser (Skipped) — Already comfortable with basic packet parsing and field extraction concepts
 
-### Bit Manipulation
+#### Bit Manipulation
 - Find Element Appearing Odd Number of Times — XOR Cancellation Logic
 - Count Total Set Bits from 1 to N — Kernighan Algorithm / Bit Counting Patterns
 
-### DSA
+#### DSA
 - Contains Duplicate — Hash Set Pattern
 - Valid Anagram — Frequency Counting / Hash Map Pattern
 
 ---
 
-## Day 9
+### Day 9
 
-### C / Systems
+#### C / Systems
 - mini_shell_v4.c — Built-in Commands / Shell Architecture
 - mini_logger.c — Modular Logging Utility / File Logging
 
-### Linux
+#### Linux
 - Built-in Shell Commands — cd / pwd / exit / history
 - Process Environment vs Child Process Execution
 - Log File Creation and Management
 - File Descriptor Based Logging
 
-### Bit Manipulation
+#### Bit Manipulation
 - Power Of Four Detection — Bit Pattern Recognition
 - Rightmost Different Bit — XOR + Bit Extraction Logic
 
-### DSA
+#### DSA
 - Two Sum — Hash Map Lookup Pattern
 - Merge Sorted Array — Two Pointer Technique
 
 ---
-## Day 10
+### Day 10
 
-### C / Systems
+#### C / Systems
 - mini_shell_v5.c — Pipes / Process Communication
 - mini_diff.c — File Comparison Utility / File IO
 
-### Linux
+#### Linux
 - pipe() System Call
 - dup2() with Pipes
 - Inter-Process Communication (IPC)
 - Multi-Process Data Flow
 
-### Bit Manipulation
+#### Bit Manipulation
 - XOR Swap — XOR Properties
 - Divide Without '/' — Bit Shifting / Binary Arithmetic
 
-### DSA
+#### DSA
 - Valid Parentheses — STL Stack Pattern
 - Best Time To Buy And Sell Stock — Running Minimum Pattern
 ---
 
-## Day 11
+### Day 11
 
-### C / Systems
+#### C / Systems
 - mini_shell_v6.c — Background Job Tracking / Shell State Management
 - mini_hexdump.c — Binary File Inspection Utility
 
-### Linux
+#### Linux
 - Background Process Tracking
 - waitpid(..., WNOHANG) for Job Monitoring
 - Binary File Processing
 - File Formatting and Inspection Utilities
 
-### Bit Manipulation
+#### Bit Manipulation
 - Count Trailing Zeros — Lowest Set Bit Logic
 - Reverse 32-bit Integer — Hierarchical Bit Swapping
 
-### DSA
+#### DSA
 - Remove Duplicates From Sorted Array — Two Pointer Pattern
 - Valid Palindrome — String Processing + Two Pointers
 
 ---
 
-## Day 12
+### Day 12
 
-### C / Systems
+#### C / Systems
 - mini_shell_v7.c — Command Execution Timing / Performance Measurement
 - mini_tail.c — File Seeking / Reverse File Traversal
 
-### Linux
+#### Linux
 - clock_gettime()
 - Execution Time Measurement
 - File Positioning (fseek/ftell)
 - Linux Utility Development
 
-### Bit Manipulation
+#### Bit Manipulation
 - Next Power Of Two — Bit Propagation Technique
 - Find Missing Number (Skipped — Previously Solved)
 
-### DSA
+#### DSA
 - Majority Element — Hash Map Frequency Counting
 - Intersection Of Two Arrays — Hash Set Pattern
 
 ---
-## Day 13
+### Day 13
 
-### C / Systems
+#### C / Systems
 - mini_shell_v8.c — Conditional Execution (&&) / Exit Status Handling
 - mini_wcl.c — Low-Level File Processing / Line Counting
 - process_tree.c — Process Metadata Inspection via /proc
 
-### Linux
+#### Linux
 - Process Exit Status (WIFEXITED / WEXITSTATUS)
 - /proc/<pid>/status Exploration
 - Low-Level File IO (open/read/close)
 - Linux Process Introspection
 
-### Bit Manipulation
+#### Bit Manipulation
 - Count Bits For Every Number — Bit DP Pattern
 - Single Number II — Bitwise State Machine Logic
 
-### DSA
+#### DSA
 - Valid Sudoku — Hashing + Matrix Validation
 - First and Last Occurrence — Binary Search Variant
 
 ---
 
-## Day 14
+### Day 14
 
-### C / Systems
+#### C / Systems
 - mini_shell_v9.c — Logical OR (||) / Shell Command Chaining
 - mini_cat.c — Low-Level File Display Utility
 - fd_leak_demo.c — File Descriptor Lifecycle / Resource Leak Demonstration
 
-### Linux
+#### Linux
 - Logical Command Chaining
 - Resource Leak Detection
 - /proc/self/fd Monitoring
 - Low-Level File Reading and Writing
 
-### Bit Manipulation
+#### Bit Manipulation
 - Generate All Subsets Using Bitmasks — Bitmask Enumeration
 - Find Two Missing Numbers — XOR Partitioning Logic
 
-### DSA
+#### DSA
 - Queue Using STL — STL Queue Familiarity
 - Find Peak Element — Binary Search Pattern
 
 ---
 
-## Day 15
+### Day 15
 
-### C / Systems
+#### C / Systems
 - mini_shell_v10.c — Sequential Command Execution (;)
 - mini_tee.c — Stream Duplication Utility
 
-### Linux
+#### Linux
 - Sequential Command Parsing
 - STDIN / STDOUT Stream Handling
 - File Descriptor Duplication Concepts
 - Utility-Style Program Development
 
-### Bit Manipulation
+#### Bit Manipulation
 - Binary Representation Palindrome Check
 - Remainder Without Using *, /, %
 
-### DSA
+#### DSA
 - Move Zeroes — Two Pointer Pattern
 - Longest Common Prefix — String Comparison Pattern
 
 ---
 
-## Day 16
+### Day 16
 
-### C / Systems
+#### C / Systems
 - mini_shell_v11.c — Quoted String Parsing / Shell Tokenization
 - shared_counter.c — Shared Memory IPC / Parent-Child Communication
 
-### Linux
+#### Linux
 - Shared Memory APIs (shmget/shmat/shmdt/shmctl)
 - Parent-Child Shared State
 - Shell Parsing Strategies
 - Command Tokenization
 
-### Bit Manipulation
+#### Bit Manipulation
 - Binary Gap — Bit Scanning / State Tracking
 - Modulo Bit Counting Logic (Single Number Variant)
 
-### DSA
+#### DSA
 - Valid Anagram (Frequency Array Version) — Character Counting
 - Search Insert Position — Binary Search Variant
 
 ---
 
-## Day 17
+### Day 17
 
-### C / Systems
+#### C / Systems
 - mini_shell_v12.c — Append Redirection (>>)
 - message_queue_demo.c — POSIX Message Queues / IPC
 
-### Linux
+#### Linux
 - POSIX Message Queue APIs
 - mq_open / mq_send / mq_receive
 - Append File Semantics (O_APPEND)
 - IPC Mechanism Comparison
 
-### Bit Manipulation
+#### Bit Manipulation
 - Parity Calculation Using XOR Folding
 - Bitwise Majority Construction
 
-### DSA
+#### DSA
 - Search In Rotated Sorted Array — Pivot Detection + Binary Search
 
 ---
 
-## Day 18
+### Day 18
 
-### C / Systems
+#### C / Systems
 - mini_shell_v13.c — STDERR Redirection (2>)
 - select_demo.c — I/O Multiplexing / select()
 
-### Linux
+#### Linux
 - STDERR vs STDOUT Redirection
 - select() API
 - FD Sets (FD_ZERO / FD_SET / FD_ISSET)
 - Blocking vs Timed Waiting
 
-### Bit Manipulation
+#### Bit Manipulation
 - XOR of Numbers From 1 to N — XOR Periodicity Pattern
 - Count Different Bits Between Two Numbers — XOR Distance
 
-### DSA
+#### DSA
 - Next Greater Element — Monotonic Stack Introduction
 - Minimum Size Subarray Sum — Sliding Window Pattern
 ---
 
-## Day 19
+### Day 19
 
-### C / Systems
+#### C / Systems
 - mini_shell_v14.c — Combined STDOUT/STDERR Redirection
 - poll_demo.c — poll() Based I/O Multiplexing
 - shared_counter_semaphore.c — Shared Memory + Semaphore Synchronization
 
-### Linux
+#### Linux
 - poll() API
 - struct pollfd
 - POLLIN Event Handling
 - Process-Shared Semaphores
 - Synchronization Using sem_wait / sem_post
 
-### Bit Manipulation
+#### Bit Manipulation
 - Isolate Rightmost Consecutive Set-Bit Block — Mask Construction
 - Count Numbers With Exactly One Set Bit — Power-of-Two Pattern
 
-### DSA
+#### DSA
 - Daily Temperatures — Monotonic Stack Reinforcement
 - Longest Substring With At Most K Distinct Characters — Sliding Window + Hash Map
 ---
 
-## Day 20
+### Day 20
 
-### C / Systems
+#### C / Systems
 - mini_shell_v15.c — Input Redirection (<)
 - shared_mem_producer_consumer.c — Shared Memory Producer Consumer
 
-### Linux
+#### Linux
 - STDIN Redirection
 - Producer Consumer Synchronization
 - Shared Memory Circular Buffers
 - Semaphore-Based Resource Coordination
 
-### Bit Manipulation
+#### Bit Manipulation
 - Extract Bit Field — Register Parsing
 - Circular Bit Rotation — Hardware-Style Bit Operations
 
-### DSA
+#### DSA
 - Largest Rectangle In Histogram — Monotonic Stack
 - Longest Repeating Character Replacement — Sliding Window + Frequency Tracking
 
 ---
 
-## Day 21
+### Day 21
 
-### C / Systems
+#### C / Systems
 - mini_shell_v16.c — Combined Input + Append Redirection
 - shared_mem_producer_consumer_ring_buffer.c — Circular Buffer Producer Consumer
 
-### Linux
+#### Linux
 - Multiple File Descriptor Redirections
 - Shared Memory Circular Buffer Design
 - Producer Consumer Architecture
 - Semaphore Protected Ring Buffers
 
-### Bit Manipulation
+#### Bit Manipulation
 - Decode Packed Register — Firmware Register Parsing
 - Count Trailing Ones — Bit State Scanning
 
-### DSA
+#### DSA
 - Sum Of Subarray Minimums — Monotonic Stack + Contribution Technique
 - Longest Substring Without Repeating Characters (Revisited) — Sliding Window Reinforcement
 ---
 
-## Day 22
+### Day 22
 
-### C / Systems
+#### C / Systems
 - mini_shell_v17.c — Shell Robustness / Error Handling
 - mini_mem_tracker.c — Memory Tracking and Leak Detection
 - thread_pool.c — Thread Pool / Condition Variables
 
-### Linux
+#### Linux
 - Defensive Programming
 - Condition Variables (pthread_cond_t)
 - Worker Thread Architecture
 - Task Queue Design
 
-### Bit Manipulation
+#### Bit Manipulation
 - Maximum XOR Pair Using Binary Trie (Revisited)
 - Count Pairs Differing By Exactly One Bit — Hamming Distance Logic
 
-### DSA
+#### DSA
 - Binary Search On Answer (Introduced)
 - Sliding Window Maximum (Revisited)
 ---
 
-## Day 23
+### Day 23
 
-### C / Systems
+#### C / Systems
 - mem_pool_allocator.c — Fixed Size Memory Pool Allocator
 - bounded_blocking_queue.c — Mutex + Condition Variable Queue
 
-### Linux
+#### Linux
 - Memory Pool Design
 - Condition Variable Based Synchronization
 - Blocking Queue Architecture
 - Resource Lifecycle Management
 
-### Bit Manipulation
+#### Bit Manipulation
 - Total XOR Of All Pairs — Contribution Technique
 - Count Subsets With XOR = K — Subset Mask Enumeration
 
-### DSA
+#### DSA
 - Capacity To Ship Packages Within D Days — Binary Search On Answer
 - Next Smaller Element — Monotonic Stack Reinforcement
 ---
-## Day 24
+### Day 24
 
-### C / Systems
+#### C / Systems
 - mem_pool_allocator_v2.c — Memory Pool Validation / Double-Free Protection
 - delayed_task_scheduler.c — Event Scheduling / Timed Task Execution
 
-### Linux
+#### Linux
 - Event Loop Design
 - Delayed Task Scheduling
 - Priority Ordered Task Queues
 - Allocator Robustness
 
-### Bit Manipulation
+#### Bit Manipulation
 - Sum Of XOR Of All Pairs — Contribution Technique Reinforcement
 - Maximum XOR Subarray — Prefix XOR + Binary Trie
 
-### DSA
+#### DSA
 - Split Array Largest Sum — Binary Search On Answer Reinforcement
 - Stock Span Problem — Monotonic Stack Reinforcement
 ---
 
-## Day 25
+### Day 25
 
-### C / Systems
+#### C / Systems
 - slab_allocator.c — Multi-Slab Memory Allocation
 - reader_writer_lock.c — Reader-Writer Synchronization
 
-### Linux
+#### Linux
 - Slab Allocator Design
 - Multi-Pool Memory Management
 - Reader-Preference Synchronization
 - Concurrency Control
 
-### Bit Manipulation
+#### Bit Manipulation
 - Count Subarrays With XOR = K — Prefix XOR + Hash Map
 - Maximum XOR Pair Without Trie — Greedy Bit Construction
 
-### DSA
+#### DSA
 - Allocate Minimum Number Of Pages — Binary Search On Answer Reinforcement
 - Next Greater Element Circular Array — Monotonic Stack + Circular Traversal
 ---
 
-## Day 26
+### Day 26
 
-### C / Systems
+#### C / Systems
 - multi_producer_single_consumer.c — Multi-Producer Queue Synchronization
 
-### Linux
+#### Linux
 - Multi-Producer Single-Consumer Design
 - Semaphore + Mutex Coordination
 - Queue Ownership and Synchronization
 
-### Bit Manipulation
+#### Bit Manipulation
 - Count Triplets With XOR = 0 — Prefix XOR + Counting Logic
 - Maximum XOR Between Two Subsets — XOR Reasoning / Mathematical Bit Logic
 
-### DSA
+#### DSA
 - Aggressive Cows — Binary Search On Answer Reinforcement
 - Online Stock Span (Conceptually Reviewed) — Monotonic Stack Design Pattern
 ---
 
-## Day 27
+### Day 27
 
-### Bit Manipulation
+#### Bit Manipulation
 - Count Subarrays With XOR Less Than K — Prefix XOR + Binary Trie Counting
 - Minimum XOR Pair — Sorting + Bitwise Observation
 
-### DSA
+#### DSA
 - Painters Partition Problem — Binary Search On Answer Reinforcement
 - Remove K Digits — Greedy + Monotonic Stack
 ---
 
+### Day 28
+
+#### Linux Device Driver Project
+- hello_driver.c — First Linux Kernel Module
+- Kernel Module Build Workflow
+- printk() Logging
+- module_init() / module_exit()
+- insmod / rmmod / lsmod / dmesg
+
+#### Driver Development
+- Linux Kernel Module Lifecycle
+- Kernel Logging Basics
+- Out-of-Tree Module Compilation
+
+#### Bit Manipulation
+- Maximum XOR Of Prefix And Suffix — Prefix XOR + Binary Trie
+- Count Pairs With XOR In Range [L, R] — Binary Trie Counting
+
+#### DSA
+- Minimize Maximum Distance Between Gas Stations — Binary Search On Answer
+- Maximum Of Minimum For Every Window Size — Advanced Monotonic Stack
+---
 
 
 
-# FORMAT TO FOLLOW
+## Format to Follow
 
 Problem Name — Subtopic
 
