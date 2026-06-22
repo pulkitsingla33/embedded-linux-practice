@@ -1,0 +1,14 @@
+make
+    This compiles the driver.c code to give the .ko kernel object file
+
+sudo insmod hello_driver.ko
+    This is used to insert the driver module into kernel
+
+lsmod | grep hello_driver
+This lists the hello driver module
+
+sudo rmmod hello_driver
+    This removes the module
+
+sudo dmesg | tail
+    This prints the messages in the kernel functions.

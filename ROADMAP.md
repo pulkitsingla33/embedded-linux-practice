@@ -365,21 +365,23 @@ Current Progress:
 - Binary Trie based problems are becoming comfortable.
 - Event-loop and scheduler style systems problems have been introduced.
 - Memory allocator design has expanded from pools to slab-style allocators.
-- Binary Search on Answer is now a comfortable pattern for common interview variants.
-- Prefix XOR reasoning is improving and should continue receiving reinforcement.
 - Multi-threaded synchronization patterns are becoming comfortable.
 - Monotonic Stack patterns are now primarily in reinforcement mode rather than introduction mode.
+- Binary Search on Answer is now a comfortable interview pattern.
+- Greedy + Monotonic Stack hybrid problems have been introduced and should receive additional practice.
+- Advanced Prefix XOR and Binary Trie counting problems remain an active focus area.
 
 Progress to harder graph/heap/advanced problems only after these patterns feel natural.
 
 Reduce future emphasis on
 - Sliding window
 - Monotonic stack Basics
+- Basic binary-search-on-answer variants
 
 Increase future emphasis on
 - Prefix XOR
-- Advanced Bit logic
-- Memory Management Designs
+- Binary Trie Counting Problems
+- Greedy reasoning problems
 
 Bit Manipulation Progress:
 
@@ -1369,6 +1371,18 @@ By placements, aim to become someone who can:
 - Aggressive Cows — Binary Search On Answer Reinforcement
 - Online Stock Span (Conceptually Reviewed) — Monotonic Stack Design Pattern
 ---
+
+## Day 27
+
+### Bit Manipulation
+- Count Subarrays With XOR Less Than K — Prefix XOR + Binary Trie Counting
+- Minimum XOR Pair — Sorting + Bitwise Observation
+
+### DSA
+- Painters Partition Problem — Binary Search On Answer Reinforcement
+- Remove K Digits — Greedy + Monotonic Stack
+---
+
 
 
 
