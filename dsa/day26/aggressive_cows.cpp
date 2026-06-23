@@ -5,8 +5,6 @@ int aggressiveCows(vector<int> &stalls, int k)
 {
     sort(stalls.begin(), stalls.end());
 
-    int base_num = stalls[0];
-
     int first = 1;
     int last = stalls.back() - stalls.front();
 
