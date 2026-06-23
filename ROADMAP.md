@@ -50,14 +50,14 @@ Theory revision is self-directed (see [Theory Revision Policy](#theory-revision-
 
 ## Main Tracks
 
-There are 7 parallel tracks:
+There are 6 parallel tracks:
 
 1. C + Systems Programming
 2. Linux Practical Skills
 3. OS + Embedded Concepts
 4. Bit Manipulation + Logic Building
 5. Placement DSA
-7. Linux Device Driver Project
+6. Linux Device Driver Project
 
 ---
 
@@ -488,7 +488,7 @@ cat /dev/mychardev
 - Fixed-size memory pools / basic allocator design
 - Multi-threaded synchronization patterns
 - Monotonic stack patterns (now in reinforcement mode, not introduction)
-- Binary Search on Answer
+- Binary Search on Answer (multiple common interview variants)
 - Binary Trie and xor maximization based problems
 - Foundational bit manipulation: XOR cancellation, XOR partitioning, power-of-two reasoning, bit masking, register extraction, bit scanning, bitwise arithmetic
 - Shell project — feature-complete for placement purposes
@@ -501,10 +501,14 @@ cat /dev/mychardev
 - Greedy + Monotonic Stack hybrid problems
 - Condition variables / thread-pool style synchronization
 - Linux kernel module
+- Linux character device registration
+- Device-number allocation (major/minor)
+- Linux file_operations interface
 
 ### Active Focus Areas (Ongoing)
 - Event-loop / scheduler-style systems problems
 - Memory allocator design (expanded from pools to slab-style allocators)
+- Linux character driver development
 
 ### General Notes
 - New Linux APIs generally require one guided exposure before becoming comfortable.
@@ -1231,6 +1235,32 @@ By placements, aim to become someone who can:
 #### DSA
 - Minimize Maximum Distance Between Gas Stations — Binary Search On Answer
 - Maximum Of Minimum For Every Window Size — Advanced Monotonic Stack
+---
+
+### Day 29
+
+#### Linux Device Driver Project
+- Character Device Registration
+- alloc_chrdev_region()
+- cdev_init()
+- cdev_add()
+- struct file_operations
+- open() / release()
+- Major and Minor Device Numbers
+
+#### Driver Development
+- Character Device Lifecycle
+- Device Number Allocation
+- VFS to Driver Dispatch Path
+- Manual Device Node Creation (mknod)
+
+#### Bit Manipulation
+- Maximum XOR Of Two Non-Overlapping Subarrays — Prefix XOR + Binary Trie
+- Count Triplets With XOR In Range [L, R] — Advanced Trie Counting
+
+#### DSA
+- Capacity To Ship Packages Within D Days (Revision)
+- Largest Rectangle In Histogram (Revision)
 ---
 
 
