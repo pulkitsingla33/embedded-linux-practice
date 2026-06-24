@@ -493,6 +493,7 @@ cat /dev/mychardev
 - Foundational bit manipulation: XOR cancellation, XOR partitioning, power-of-two reasoning, bit masking, register extraction, bit scanning, bitwise arithmetic
 - Shell project — feature-complete for placement purposes
 - Prefix XOR
+- Prefix State + HashMap patterns (Prefix XOR, Prefix Sum frequency counting)
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -505,11 +506,12 @@ cat /dev/mychardev
 - Linux character device registration
 - Device-number allocation (major/minor)
 - Linux file_operations interface
+- ioctl-based driver interfaces
 
 ### Active Focus Areas (Ongoing)
-- Event-loop / scheduler-style systems problems
 - Memory allocator design (expanded from pools to slab-style allocators)
-- Linux character driver development
+- Character driver feature development
+- Driver synchronization and wait queues
 
 ### General Notes
 - New Linux APIs generally require one guided exposure before becoming comfortable.
@@ -1286,6 +1288,28 @@ By placements, aim to become someone who can:
 #### DSA
 - Search In 2D Matrix
 - Sum Of Subarray Minimums (Contribution Technique Revision)
+---
+
+### Day 31
+
+#### Linux Device Driver Project
+- Implemented ioctl() Support
+- SET_VALUE / GET_VALUE / CLEAR_BUFFER Commands
+- unlocked_ioctl Interface
+- User-Space IOCTL Test Program
+
+#### Driver Development
+- IOCTL Based User ↔ Kernel Communication
+- Driver Command Interfaces
+- Device State Management
+
+#### Bit Manipulation
+- Count Subarrays With Equal 0s And 1s
+- Prefix State + HashMap Reinforcement
+
+#### DSA
+- Find K Closest Elements
+- Asteroid Collision
 ---
 
 
