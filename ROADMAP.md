@@ -492,6 +492,7 @@ cat /dev/mychardev
 - Binary Trie and xor maximization based problems
 - Foundational bit manipulation: XOR cancellation, XOR partitioning, power-of-two reasoning, bit masking, register extraction, bit scanning, bitwise arithmetic
 - Shell project — feature-complete for placement purposes
+- Prefix XOR
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -1261,6 +1262,30 @@ By placements, aim to become someone who can:
 #### DSA
 - Capacity To Ship Packages Within D Days (Revision)
 - Largest Rectangle In Histogram (Revision)
+---
+
+### Day 30
+
+#### Linux Device Driver Project
+- Implemented read() and write() operations
+- copy_to_user() and copy_from_user()
+- Character Device Data Transfer
+- Automatic Device Node Creation
+- class_create()
+- device_create()
+
+#### Driver Development
+- User Space ↔ Kernel Space Communication
+- Character Device Buffer Management
+- Device File Lifecycle
+
+#### Bit Manipulation
+- Count Subarrays With XOR = K (Reimplemented)
+- Prefix XOR + HashMap Reinforcement
+
+#### DSA
+- Search In 2D Matrix
+- Sum Of Subarray Minimums (Contribution Technique Revision)
 ---
 
 
