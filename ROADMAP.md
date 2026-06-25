@@ -494,6 +494,9 @@ cat /dev/mychardev
 - Shell project — feature-complete for placement purposes
 - Prefix XOR
 - Prefix State + HashMap patterns (Prefix XOR, Prefix Sum frequency counting)
+- Linux character device registration
+- Device-number allocation (major/minor)
+- Linux file_operations interface
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -503,10 +506,10 @@ cat /dev/mychardev
 - Greedy + Monotonic Stack hybrid problems
 - Condition variables / thread-pool style synchronization
 - Linux kernel module
-- Linux character device registration
-- Device-number allocation (major/minor)
-- Linux file_operations interface
 - ioctl-based driver interfaces
+- Wait queues
+- Blocking driver operations
+- Driver synchronization using mutexes
 
 ### Active Focus Areas (Ongoing)
 - Memory allocator design (expanded from pools to slab-style allocators)
@@ -1311,6 +1314,29 @@ By placements, aim to become someone who can:
 - Find K Closest Elements
 - Asteroid Collision
 ---
+
+### Day 32
+
+#### Linux Device Driver Project
+- Driver Synchronization Using Mutex
+- Blocking read() with Wait Queues
+- wait_event_interruptible()
+- wake_up_interruptible()
+
+#### Driver Development
+- Concurrent Character Driver
+- Driver State Protection
+- Blocking User-Space Communication
+
+#### Bit Manipulation
+- Count Subarrays With Sum Divisible By K
+- Maximum XOR With Element Less Than M (Offline Queries + Binary Trie)
+
+#### DSA
+- Median Of Two Sorted Arrays (Editorial Study)
+- Car Fleet (Editorial Study)
+---
+
 
 
 
