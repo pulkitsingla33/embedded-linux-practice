@@ -497,6 +497,8 @@ cat /dev/mychardev
 - Linux character device registration
 - Device-number allocation (major/minor)
 - Linux file_operations interface
+- Wait queues
+- Blocking driver operations
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -507,9 +509,10 @@ cat /dev/mychardev
 - Condition variables / thread-pool style synchronization
 - Linux kernel module
 - ioctl-based driver interfaces
-- Wait queues
-- Blocking driver operations
 - Driver synchronization using mutexes
+- ioctl-based driver interfaces
+- Driver synchronization using mutexes
+- poll()/select() callback implementation
 
 ### Active Focus Areas (Ongoing)
 - Memory allocator design (expanded from pools to slab-style allocators)
@@ -1336,6 +1339,29 @@ By placements, aim to become someone who can:
 - Median Of Two Sorted Arrays (Editorial Study)
 - Car Fleet (Editorial Study)
 ---
+
+### Day 33
+
+#### Linux Device Driver Project
+- Added poll() Support
+- poll_wait()
+- POLLIN / POLLRDNORM Event Handling
+- User-Space poll() Test Program
+
+#### Driver Development
+- Event-Driven Character Driver
+- poll() / select() Integration
+- Wait Queue Based Event Notification
+
+#### Bit Manipulation
+- Maximum XOR Of Strong Pair
+- Wonderful Substrings (Bitmask State + Prefix Frequency)
+
+#### DSA
+- Search Suggestions System (Editorial Study)
+- Task Scheduler (Editorial Study)
+---
+
 
 
 
