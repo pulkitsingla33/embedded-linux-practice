@@ -384,40 +384,52 @@ cat /dev/mychardev
 
 **Deliverable:** Event-driven character driver.
 
-#### Phase 6: UART Exploration
+#### Phase 6: Advanced Character Driver — Mini Kernel Subsystem
 
-**Objectives:** Understand Linux serial architecture using available USB-UART hardware.
-
-**Topics**
-- tty subsystem
-- serial_core
-- termios
-- baud rate configuration, parity, flow control
-
-**Deliverables**
-- User-space UART utility
-- UART communication tests using USB-UART converter
-- Study of Linux UART driver architecture
-
-#### Phase 7: I2C Driver Development
-
-**Objectives:** Learn the Linux I2C driver framework.
+**Objectives:** Turn the existing character driver into a self-contained mini kernel subsystem demonstrating multi-client access, structured control, and observability — without requiring any hardware.
 
 **Topics**
-- `i2c_driver`, `i2c_client`
-- `probe()`, `remove()`
-- `i2c_transfer()`
+- Circular buffer design inside kernel space
+- Multiple readers / multiple writers support
+- `mutex` / `spinlock` selection and justification
+- Extended `ioctl()` command set
+- Driver-internal statistics tracking
 
-**Environment:** Use virtual/stub I2C devices if hardware is unavailable.
+**Features**
+- `/dev/msgdrv` supporting concurrent open() from multiple processes
+- Circular buffer with configurable size (`SET_BUFFER_SIZE`)
+- `ioctl()` commands: `GET_STATS`, `CLEAR_STATS`, `SET_BUFFER_SIZE`, `RESET_DRIVER`
+- Statistics tracked: bytes written, bytes read, read operations, write operations, blocking waits, dropped messages
+- Backpressure handling when buffer is full (drop vs block, documented trade-off)
 
-**Deliverable:** Simple Linux I2C client driver.
+**Deliverable:** A thread-safe, multi-client character driver with configurable buffering and a stats/control interface via `ioctl()`.
+
+#### Phase 7: Virtual Sensor Driver — Kernel Thread + Data Pipeline
+
+**Objectives:** Build a driver that models a real sensor's data pipeline (producer thread → buffer → consumer) using simulated data, while keeping the kernel-side logic hardware-agnostic and swappable for real hardware later.
+
+**Topics**
+- `kthread_run()` — kernel thread lifecycle
+- Producer-consumer pattern inside the kernel
+- `poll_wait()`, `wait_event_interruptible()`, `wake_up_interruptible()`
+- Timestamping samples
+- Simple moving-average filtering
+
+**Features**
+- `/dev/tempsensor` backed by a kernel thread generating simulated readings (temperature/humidity/pressure) at a configurable interval
+- `read()` returns the latest sample, blocking via wait queue when no new sample is available
+- `poll()` support so userspace can `select()`/`epoll()` on new data
+- `ioctl()` commands: `SET_INTERVAL`, `SET_NOISE`, `GET_STATS`, `RESET`
+- Userspace monitoring application that polls and logs timestamped readings
+
+**Deliverable:** A kernel-thread-driven virtual sensor driver with blocking reads, `poll()` support, and a userspace monitor — structured so the simulated sampling function can later be swapped for a real I2C/SPI read with no other code changes.
 
 **Expected Outcomes** — by completion of this track:
 - Comfortable with Linux kernel modules
 - Comfortable with character drivers
 - Understand driver synchronization mechanisms
-- Understand UART driver architecture
-- Understand Linux I2C driver model
+- Understand multi-client driver design and statistics/control interfaces
+- Understand kernel-thread-driven producer-consumer patterns and event-driven (`poll()`) drivers
 - Possess a substantial embedded/Linux project suitable for firmware and embedded-systems interviews
 
 **Project Requirements** — must include:
@@ -499,6 +511,7 @@ cat /dev/mychardev
 - Linux file_operations interface
 - Wait queues
 - Blocking driver operations
+- Basic character driver development (module lifecycle, registration, read/write, ioctl, wait queues, poll)
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -513,6 +526,9 @@ cat /dev/mychardev
 - ioctl-based driver interfaces
 - Driver synchronization using mutexes
 - poll()/select() callback implementation
+- Linux TTY subsystem
+- termios-based serial communication
+- UART user-space programming
 
 ### Active Focus Areas (Ongoing)
 - Memory allocator design (expanded from pools to slab-style allocators)
@@ -1360,6 +1376,29 @@ By placements, aim to become someone who can:
 #### DSA
 - Search Suggestions System (Editorial Study)
 - Task Scheduler (Editorial Study)
+---
+
+### Day 34
+
+#### Linux Device Driver Project
+- UART User-Space Terminal
+- termios Configuration
+- Baud Rate Configuration
+- UART Loopback Communication
+- Serial Port Programming
+
+#### Driver Development
+- Linux TTY Subsystem (Introduction)
+- User-Space UART Communication
+- UART Configuration using termios
+
+#### Bit Manipulation
+- Count Excellent Pairs (Popcount-Based Counting)
+- Maximum AND Pair (Greedy Bit Construction)
+
+#### DSA
+- Merge Intervals (Revision)
+- Meeting Rooms II (Priority Queue / Heap)
 ---
 
 
