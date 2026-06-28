@@ -512,6 +512,9 @@ cat /dev/mychardev
 - Wait queues
 - Blocking driver operations
 - Basic character driver development (module lifecycle, registration, read/write, ioctl, wait queues, poll)
+- Driver synchronization using mutexes
+- Circular buffer design and wrap-around logic
+- Basic C++ STL usage (sort, priority_queue, lower_bound, upper_bound)
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -524,7 +527,6 @@ cat /dev/mychardev
 - ioctl-based driver interfaces
 - Driver synchronization using mutexes
 - ioctl-based driver interfaces
-- Driver synchronization using mutexes
 - poll()/select() callback implementation
 - Linux TTY subsystem
 - termios-based serial communication
@@ -1401,7 +1403,33 @@ By placements, aim to become someone who can:
 - Meeting Rooms II (Priority Queue / Heap)
 ---
 
+### Day 35
 
+#### Linux Device Driver Project
+- Circular Buffer Implementation
+- Driver Statistics Collection
+- GET_STATS ioctl Extension
+- Driver Statistics Test Program
+
+#### Driver Development
+- Circular Buffer Design
+- Driver Observability
+- Buffer Overflow Handling Policy
+- Multi-Operation Driver Validation
+
+#### Bit Manipulation
+- Count Pairs With Sum As Power Of Two
+- Maximum Product Of Word Lengths (Bitmask Representation)
+
+#### DSA
+- Top K Frequent Elements (Priority Queue + STL)
+- Insert Interval
+
+#### C++ STL Reinforcement
+- sort() and Custom Comparators
+- priority_queue
+- lower_bound() / upper_bound()
+---
 
 
 
