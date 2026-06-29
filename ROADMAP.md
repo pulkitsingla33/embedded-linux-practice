@@ -515,6 +515,8 @@ cat /dev/mychardev
 - Driver synchronization using mutexes
 - Circular buffer design and wrap-around logic
 - Basic C++ STL usage (sort, priority_queue, lower_bound, upper_bound)
+- Kernel dynamic memory management (kmalloc/kfree)
+- Runtime driver reconfiguration via ioctl
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -526,13 +528,11 @@ cat /dev/mychardev
 - Linux kernel module
 - ioctl-based driver interfaces
 - Driver synchronization using mutexes
-- ioctl-based driver interfaces
 - poll()/select() callback implementation
 - Linux TTY subsystem
-- termios-based serial communication
-- UART user-space programming
-- Kernel dynamic memory management (kmalloc/kfree)
-- Runtime driver reconfiguration via ioctl
+- Kernel thread lifecycle (kthread_run / kthread_should_stop)
+- Virtual sensor driver architecture
+- Producer–consumer pattern inside kernel space
 
 ### Active Focus Areas (Ongoing)
 - Memory allocator design (expanded from pools to slab-style allocators)
@@ -1454,6 +1454,28 @@ By placements, aim to become someone who can:
 #### DSA
 - Merge K Sorted Lists (Priority Queue + Custom Comparator)
 - Kth Largest Element In An Array
+---
+
+### Day 37
+
+#### Linux Device Driver Project
+- Virtual Sensor Driver Skeleton
+- Kernel Thread Based Sensor Generation
+- Blocking Sensor Read
+- Userspace Sensor Monitor
+
+#### Driver Development
+- Device Private State
+- Kernel Producer–Consumer Pattern
+- Simulated Sensor Data Pipeline
+- Kernel Thread Lifecycle
+
+#### Bit Manipulation
+- Count Excellent Pairs (Reimplementation)
+- Maximum Rows Covered By Columns (Bitmask Enumeration)
+
+#### DSA
+- Minimum Number Of Arrows To Burst Balloons (Greedy Interval Scheduling)
 ---
 
 
