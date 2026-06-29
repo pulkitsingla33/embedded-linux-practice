@@ -531,6 +531,8 @@ cat /dev/mychardev
 - Linux TTY subsystem
 - termios-based serial communication
 - UART user-space programming
+- Kernel dynamic memory management (kmalloc/kfree)
+- Runtime driver reconfiguration via ioctl
 
 ### Active Focus Areas (Ongoing)
 - Memory allocator design (expanded from pools to slab-style allocators)
@@ -1429,6 +1431,29 @@ By placements, aim to become someone who can:
 - sort() and Custom Comparators
 - priority_queue
 - lower_bound() / upper_bound()
+---
+
+### Day 36
+
+#### Linux Device Driver Project
+- Dynamic Circular Buffer using kmalloc()/kfree()
+- Runtime Buffer Resizing
+- SET_BUFFER_SIZE ioctl
+- RESET_DRIVER ioctl
+- Driver Reset Validation Program
+
+#### Driver Development
+- Dynamic Kernel Memory Management
+- Runtime Driver Reconfiguration
+- Safe Buffer Migration During Resize
+
+#### Bit Manipulation
+- Shortest Subarray With OR At Least K
+- Smallest Subarrays With Maximum Bitwise OR (Editorial Study)
+
+#### DSA
+- Merge K Sorted Lists (Priority Queue + Custom Comparator)
+- Kth Largest Element In An Array
 ---
 
 
