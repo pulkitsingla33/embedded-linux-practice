@@ -118,7 +118,7 @@ static void publish_sensor_sample(struct tempsensor_dev *dev, u32 raw_temp, u32 
 
     mutex_lock(&dev->lock);
     avg_temp = apply_moving_average(dev, raw_temp);
-    dev->data_len = snprintf(dev->buffer, BUFFER_SIZE, "Timestamp: %ld-%02d-%02d %02d:%02d:%02d UTC\nTemp: %u\n Humidity: %u\n Pressure: %u\n", 1900 + tm->tm_year, tm->tm_mon + 1, tm->tm_mday, tm->tm_hour, tm->tm_min, tm->tm_sec, avg_temp, humidity, pressure);
+    dev->data_len = snprintf(dev->buffer, BUFFER_SIZE, "Timestamp: %ld-%02d-%02d %02d:%02d:%02d UTC\nTemp: %u\nHumidity: %u\nPressure: %u\n", 1900 + tm->tm_year, tm->tm_mon + 1, tm->tm_mday, tm->tm_hour, tm->tm_min, tm->tm_sec, avg_temp, humidity, pressure);
     dev->data_ready = true;
     record_sample_generated(dev);
     mutex_unlock(&dev->lock);
@@ -141,6 +141,10 @@ static int tempsensor_thread(void *data)
 
     while(!kthread_should_stop())
     {
+        mutex_lock(&dev->lock);
+        current_noise = dev->noise_margin;
+        mutex_unlock(&dev->lock);
+
         generate_sensor_sample(&raw_temp, &humidity, &pressure, &tm, current_noise);
 
         publish_sensor_sample(dev, raw_temp, humidity, pressure, &tm);

@@ -519,6 +519,8 @@ cat /dev/mychardev
 - Runtime driver reconfiguration via ioctl
 - Virtual sensor driver architecture
 - Producer–consumer pattern inside kernel space
+- Kernel thread lifecycle (kthread_run / kthread_should_stop)
+- Runtime configurable kernel threads
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -532,10 +534,11 @@ cat /dev/mychardev
 - Driver synchronization using mutexes
 - poll()/select() callback implementation
 - Linux TTY subsystem
-- Kernel thread lifecycle (kthread_run / kthread_should_stop)
-- Runtime configurable kernel threads
 - Driver timestamp generation
 - Driver statistics and observability
+- Streaming data processing inside kernel drivers
+- Driver-side filtering (moving average)
+- Driver modularization and helper-function design
 
 ### Active Focus Areas (Ongoing)
 - Memory allocator design (expanded from pools to slab-style allocators)
@@ -1505,6 +1508,28 @@ By placements, aim to become someone who can:
 - Reorganize String (Editorial Study)
 ---
 
+### Day 39
+
+#### Linux Device Driver Project
+- Driver Modularization
+- Moving Average Filtering
+- SET_NOISE ioctl
+- Sensor Data Processing Pipeline
+
+#### Driver Development
+- Separation of Driver Responsibilities
+- Streaming Data Filtering
+- Noise Injection
+- Statistics Helper Functions
+
+#### Bit Manipulation
+- Maximum XOR For Each Query
+- Number Of Valid Words For Each Puzzle (Subset Enumeration)
+
+#### DSA
+- Non-overlapping Intervals (Editorial Study)
+- Task Scheduler (Reimplementation / Editorial Review)
+---
 
 ## Format to Follow
 
