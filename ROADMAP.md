@@ -517,6 +517,8 @@ cat /dev/mychardev
 - Basic C++ STL usage (sort, priority_queue, lower_bound, upper_bound)
 - Kernel dynamic memory management (kmalloc/kfree)
 - Runtime driver reconfiguration via ioctl
+- Virtual sensor driver architecture
+- Producer–consumer pattern inside kernel space
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -531,8 +533,9 @@ cat /dev/mychardev
 - poll()/select() callback implementation
 - Linux TTY subsystem
 - Kernel thread lifecycle (kthread_run / kthread_should_stop)
-- Virtual sensor driver architecture
-- Producer–consumer pattern inside kernel space
+- Runtime configurable kernel threads
+- Driver timestamp generation
+- Driver statistics and observability
 
 ### Active Focus Areas (Ongoing)
 - Memory allocator design (expanded from pools to slab-style allocators)
@@ -1478,6 +1481,29 @@ By placements, aim to become someone who can:
 - Minimum Number Of Arrows To Burst Balloons (Greedy Interval Scheduling)
 ---
 
+### Day 38
+
+#### Linux Device Driver Project
+- Configurable Sensor Sampling Interval
+- SET_INTERVAL ioctl
+- Sensor Statistics (GET_STATS / RESET_STATS)
+- Kernel Timestamp Generation
+- Updated Userspace Sensor Monitor
+
+#### Driver Development
+- Runtime Sensor Configuration
+- Driver Observability
+- Timestamped Data Generation
+- Thread Wake-up on Configuration Changes
+
+#### Bit Manipulation
+- Maximum XOR Between Two Arrays (Conceptual Revision)
+- Maximum OR After Shifting One Element
+
+#### DSA
+- Merge Overlapping Intervals (Editorial Study)
+- Reorganize String (Editorial Study)
+---
 
 
 ## Format to Follow
