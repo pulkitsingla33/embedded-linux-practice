@@ -461,6 +461,8 @@ cat /dev/mychardev
 
 **Deliverable:** A short written summary (half a page is enough) of patterns observed across the three driver classes, to use as talking points in interviews.
 
+> During PCI driver development, DSA and bit-manipulation practice are temporarily reduced to maintenance mode to prioritize completion of a substantial kernel project. Regular practice resumes after the PCI driver milestone is reached.
+
 #### Phase 9A: PCI Enumeration, BAR Mapping, and MMIO
 
 **Objectives:** Implement the discovery-to-register-access lifecycle of a PCI driver against QEMU's purpose-built `edu` device, ending with a working MMIO round-trip through the driver.
@@ -1647,6 +1649,24 @@ By placements, aim to become someone who can:
 #### DSA
 - Insert Delete GetRandom O(1) (Hash Map + Vector Design)
 - Meeting Rooms III (Heap + Interval Scheduling)
+---
+
+### Day 41
+
+#### Linux Device Driver Project
+- QEMU EDU Device Exploration
+- PCI Device Enumeration
+- PCI Debugging Tools (lspci / sysfs)
+- EDU Register Map Study
+- Existing PCI Driver Source Exploration
+- PCI Driver Lifecycle Study
+
+#### Driver Development
+- Vendor ID / Device ID Matching
+- probe() / remove() Lifecycle
+- PCI Device Discovery
+- BAR Layout Understanding
+- Linux PCI Subsystem Familiarization
 ---
 
 
