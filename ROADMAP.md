@@ -424,12 +424,97 @@ cat /dev/mychardev
 
 **Deliverable:** A kernel-thread-driven virtual sensor driver with blocking reads, `poll()` support, and a userspace monitor — structured so the simulated sampling function can later be swapped for a real I2C/SPI read with no other code changes.
 
+#### Phase 8: QEMU Kernel/VM Validation Workflow
+
+**Objectives:** Adopt the standard kernel-development workflow of testing modules inside a disposable QEMU virtual machine instead of directly on the host, in preparation for hardware-facing driver work.
+
+**Topics**
+- Building a kernel from source (or reusing distro kernel + matching headers)
+- Building a minimal root filesystem with BusyBox
+- `initramfs`/`cpio` packaging
+- QEMU boot flags (`-kernel`, `-initrd`, `-append`, `-nographic`)
+- Serial console interaction with a QEMU guest
+- Attaching GDB to a QEMU kernel (`-s -S`, `target remote`, `lx-symbols`)
+
+**Features**
+- Bootable minimal Linux environment under QEMU (`qemu-system-x86_64`)
+- `tempsensor.ko` and `msgdrv.ko` built against the VM kernel, loaded via `insmod` inside the guest
+- Existing userspace test programs (ioctl test, poll test, sensor monitor) run unmodified inside the VM
+- GDB attached to the running QEMU kernel, able to set a breakpoint inside one existing driver function and inspect it live
+
+**Deliverable:** A repeatable QEMU boot script/Makefile target that loads and exercises existing drivers inside an isolated VM, with no host kernel risk, plus a documented GDB-attach workflow for live kernel debugging.
+
+#### Phase 8.5: Reading Existing Kernel Driver Code
+
+**Objectives:** Build comfort navigating real kernel driver source — not to understand it exhaustively, but to be able to confidently say "yes" when asked in interviews whether you've read existing kernel drivers, and to recognize the patterns Phase 9 will use before writing them from scratch.
+
+**Topics**
+- Kernel source tree layout and where driver classes live
+- Identifying `probe()`/`remove()`, `file_operations`, and ID-matching tables in real drivers
+- Recognizing common locking, error-handling (`goto` cleanup chains), and resource-management idioms
+
+**Activity**
+- Read through relevant portions of `drivers/pci/` (focus on a simple PCI driver, not the core bus code)
+- Read through a simple driver in `drivers/char/`
+- Read through a simple driver in `drivers/net/` for contrast
+- Note recurring patterns (cleanup-on-error chains, `devm_*` usage, ID tables) in a short personal reference doc
+
+**Deliverable:** A short written summary (half a page is enough) of patterns observed across the three driver classes, to use as talking points in interviews.
+
+#### Phase 9A: PCI Enumeration, BAR Mapping, and MMIO
+
+**Objectives:** Implement the discovery-to-register-access lifecycle of a PCI driver against QEMU's purpose-built `edu` device, ending with a working MMIO round-trip through the driver.
+
+**Topics**
+- `pci_driver` registration, `probe()` / `remove()`
+- PCI device/vendor ID matching (`pci_device_id` table)
+- Device lifecycle: `pci_enable_device()` → `pci_request_regions()` → `pci_iomap()`
+- BAR (Base Address Register) mapping
+- MMIO register access (`ioread32()`, `iowrite32()`)
+- PCI debugging tools: `lspci`, `setpci`, `/proc/iomem`, `/sys/bus/pci`, `/sys/kernel/debug`
+
+**Environment**
+- QEMU built/run with `-device edu` enabled
+- Guest kernel booted via the Phase 8 QEMU workflow, with PCI support enabled in kernel config
+
+**Features**
+- Driver binds to the `edu` device on `probe()`, following the enable → request-regions → iomap lifecycle
+- Triggers the device's factorial-compute register and reads back the result via MMIO
+- `ioctl()`-based userspace interface: `ioctl() → driver → MMIO register → read result → return to userspace`
+- Verification of device presence/BAR layout via `lspci -vv` and `/sys/bus/pci` before and during driver operation
+
+**Deliverable:** A PCI driver that enumerates, binds, maps its BAR, and performs a verified MMIO read/write round-trip via `ioctl()` — checkpointed and working before interrupts/DMA are introduced.
+
+#### Phase 9B: PCI Interrupts and DMA
+
+**Objectives:** Extend the Phase 9A driver with real hardware-generated interrupts and a DMA transfer — the substantially harder half of PCI driver work, deliberately isolated as its own milestone.
+
+**Topics**
+- `request_irq()` for hardware-generated interrupts
+- DMA buffer allocation (`dma_alloc_coherent()`)
+- DMA-completion interrupt handling
+- Driver cleanup ordering (`free_irq()`, DMA buffer teardown, region release on `remove()`)
+
+**Environment**
+- Same QEMU `edu` device setup as Phase 9A
+
+**Features**
+- Driver registers an interrupt handler on the `edu` device's IRQ line
+- Triggers the device's DMA engine and handles the completion interrupt via `request_irq()`
+- Userspace test program exercising the DMA path end-to-end
+- Verified clean teardown on module removal (no leaked IRQ handlers, DMA buffers, or PCI regions)
+
+**Deliverable:** The Phase 9A driver extended with working interrupt handling and a completed DMA transfer against QEMU's `edu` device, with a short write-up covering the BAR layout, the enumeration lifecycle, and the interrupt/DMA completion flow.
+
 **Expected Outcomes** — by completion of this track:
 - Comfortable with Linux kernel modules
 - Comfortable with character drivers
 - Understand driver synchronization mechanisms
 - Understand multi-client driver design and statistics/control interfaces
 - Understand kernel-thread-driven producer-consumer patterns and event-driven (`poll()`) drivers
+- Comfortable building and booting custom kernels under QEMU for safe driver testing, including live GDB debugging
+- Comfortable navigating real kernel driver source across PCI, char, and net driver classes
+- Understand the PCI driver model: enumeration, BAR mapping, MMIO, hardware interrupts, and DMA — and the standard PCI debugging toolchain
 - Possess a substantial embedded/Linux project suitable for firmware and embedded-systems interviews
 
 **Project Requirements** — must include:
@@ -521,6 +606,10 @@ cat /dev/mychardev
 - Producer–consumer pattern inside kernel space
 - Kernel thread lifecycle (kthread_run / kthread_should_stop)
 - Runtime configurable kernel threads
+- Linux kernel module
+- QEMU kernel development workflow
+- BusyBox-based kernel testing
+- initramfs creation
 
 ### Introduced, Needs 1–2 Reinforcement Exercises
 - Shared-memory IPC
@@ -539,6 +628,10 @@ cat /dev/mychardev
 - Streaming data processing inside kernel drivers
 - Driver-side filtering (moving average)
 - Driver modularization and helper-function design
+- Linux PCI subsystem
+- PCI enumeration lifecycle
+- BAR mapping
+- MMIO register access
 
 ### Active Focus Areas (Ongoing)
 - Memory allocator design (expanded from pools to slab-style allocators)
@@ -1530,6 +1623,32 @@ By placements, aim to become someone who can:
 - Non-overlapping Intervals (Editorial Study)
 - Task Scheduler (Reimplementation / Editorial Review)
 ---
+### Day 40
+
+#### Linux Device Driver Project
+- QEMU Development Environment Setup
+- BusyBox Root Filesystem
+- initramfs Creation
+- Minimal Linux Boot in QEMU
+- Existing Kernel Modules Validated Inside VM
+- QEMU Kernel Development Workflow
+
+#### Driver Development
+- Kernel Development Environment
+- BusyBox-Based Userspace
+- init Process
+- Kernel Module Testing Inside QEMU
+- QEMU + GDB Workflow (Introduction)
+
+#### Bit Manipulation
+- Maximum XOR Product (Editorial Study)
+- Apply Operations On Array To Maximize Sum Of Squares (Contribution Reasoning)
+
+#### DSA
+- Insert Delete GetRandom O(1) (Hash Map + Vector Design)
+- Meeting Rooms III (Heap + Interval Scheduling)
+---
+
 
 ## Format to Follow
 
